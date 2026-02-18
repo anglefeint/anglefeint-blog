@@ -92,6 +92,25 @@ pnpm build
 pnpm preview
 ```
 
+## Deploy to Cloudflare Workers
+
+This theme ships with `wrangler.jsonc` for static asset deployment.
+
+```bash
+# one-time login
+npx wrangler login
+
+# update worker/service name in wrangler.jsonc first
+# then deploy
+npm run cf:deploy
+```
+
+Dry run before a real deploy:
+
+```bash
+npm run cf:deploy:dry
+```
+
 ## Create New Post
 
 Create the same slug in all locales (`en`, `ja`, `ko`, `es`, `zh`):
