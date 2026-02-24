@@ -29,41 +29,6 @@ npm create astro@latest -- --template voidtem/astro-theme-anglefeint
 pnpm create astro@latest --template voidtem/astro-theme-anglefeint
 ```
 
-## 语言
-
-[English](README.md) · 简体中文（当前） · [日本語](README.ja.md) · [Español](README.es.md) · [한국어](README.ko.md)
-
-## 预览
-
-| 首页 | 博客列表 |
-| --- | --- |
-| ![Home preview](public/images/theme-previews/preview-home.png) | ![Blog list preview](public/images/theme-previews/preview-blog-list.png) |
-
-| 文章页（展开） | 文章页（折叠） |
-| --- | --- |
-| ![Blog post open preview](public/images/theme-previews/preview-blog-post-open.png) | ![Blog post collapsed preview](public/images/theme-previews/preview-blog-post-collapsed.png) |
-
-| About |
-| --- |
-| ![About preview](public/images/theme-previews/preview-about.png) |
-
-## 路由视觉氛围
-
-- `/`：Matrix 终端风首页
-- `/:lang/blog`：赛博朋克归档列表
-- `/:lang/blog/[slug]`：AI 界面风文章页
-- `/:lang/about`：可选黑客风 About 页面
-
-## 功能特性
-
-- Astro 5 静态输出
-- Markdown + MDX 内容集合
-- 内置语言：`en`、`ja`、`ko`、`es`、`zh`
-- 按语言生成 RSS
-- 内置 Sitemap 与 robots
-- 配置驱动的主题定制
-- 短页面下 Footer 贴底
-
 ## 环境要求
 
 - Node.js `18+`（建议 LTS）
@@ -101,6 +66,63 @@ npm run new-post -- my-first-post
 ```
 
 Slug 规则：仅使用小写字母、数字和连字符（示例：`my-first-post`）。
+如果 `src/assets/blog/default-covers/` 中存在默认封面，脚本会按 slug 哈希自动分配一张（后续可手动替换 `heroImage`）。
+
+## 新建页面
+
+`new-post` 只创建博客文章。自定义页面请使用：
+
+```bash
+npm run new-page -- projects --theme base
+```
+
+可选主题：`base`、`ai`、`cyber`、`hacker`、`matrix`。  
+命令会生成 `src/pages/[lang]/projects.astro`，并通过 `getStaticPaths()` 输出全部语言路由。
+
+示例：
+
+```bash
+npm run new-page -- projects --theme base
+npm run new-page -- projects --theme ai
+npm run new-page -- projects --theme cyber
+npm run new-page -- projects --theme hacker
+npm run new-page -- projects --theme matrix
+```
+
+## 语言
+
+[English](README.md) · 简体中文（当前） · [日本語](README.ja.md) · [Español](README.es.md) · [한국어](README.ko.md)
+
+## 预览
+
+| 首页 | 博客列表 |
+| --- | --- |
+| ![Home preview](public/images/theme-previews/preview-home.png) | ![Blog list preview](public/images/theme-previews/preview-blog-list.png) |
+
+| 文章页（展开） | 文章页（折叠） |
+| --- | --- |
+| ![Blog post open preview](public/images/theme-previews/preview-blog-post-open.png) | ![Blog post collapsed preview](public/images/theme-previews/preview-blog-post-collapsed.png) |
+
+| About |
+| --- |
+| ![About preview](public/images/theme-previews/preview-about.png) |
+
+## 路由视觉氛围
+
+- `/`：Matrix 终端风首页
+- `/:lang/blog`：赛博朋克归档列表
+- `/:lang/blog/[slug]`：AI 界面风文章页
+- `/:lang/about`：可选黑客风 About 页面
+
+## 功能特性
+
+- Astro 5 静态输出
+- Markdown + MDX 内容集合
+- 内置语言：`en`、`ja`、`ko`、`es`、`zh`
+- 按语言生成 RSS
+- 内置 Sitemap 与 robots
+- 配置驱动的主题定制
+- 短页面下 Footer 贴底
 
 ## 主题配置
 

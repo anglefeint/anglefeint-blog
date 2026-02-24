@@ -29,41 +29,6 @@ npm create astro@latest -- --template voidtem/astro-theme-anglefeint
 pnpm create astro@latest --template voidtem/astro-theme-anglefeint
 ```
 
-## 언어
-
-[English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Español](README.es.md) · 한국어 (현재 문서)
-
-## 미리보기
-
-| 홈 | 블로그 목록 |
-| --- | --- |
-| ![Home preview](public/images/theme-previews/preview-home.png) | ![Blog list preview](public/images/theme-previews/preview-blog-list.png) |
-
-| 글 상세 (모니터 열림) | 글 상세 (모니터 접힘) |
-| --- | --- |
-| ![Blog post open preview](public/images/theme-previews/preview-blog-post-open.png) | ![Blog post collapsed preview](public/images/theme-previews/preview-blog-post-collapsed.png) |
-
-| About |
-| --- |
-| ![About preview](public/images/theme-previews/preview-about.png) |
-
-## 라우트별 분위기
-
-- `/`: Matrix 스타일 터미널 랜딩
-- `/:lang/blog`: 사이버펑크 아카이브 무드
-- `/:lang/blog/[slug]`: AI 인터페이스형 읽기 레이아웃
-- `/:lang/about`: 선택형 해커 스타일 About 페이지
-
-## 주요 기능
-
-- Astro 5 정적 출력
-- Markdown + MDX 콘텐츠 컬렉션
-- 기본 로케일: `en`, `ja`, `ko`, `es`, `zh`
-- 로케일별 RSS 피드
-- sitemap + robots 지원
-- 설정 중심의 커스터마이징
-- 짧은 페이지에서도 Footer 하단 고정
-
 ## 요구 사항
 
 - Node.js `18+` (LTS 권장)
@@ -101,6 +66,63 @@ npm run new-post -- my-first-post
 ```
 
 Slug 규칙: 소문자 영문, 숫자, 하이픈만 사용하세요 (예: `my-first-post`).
+`src/assets/blog/default-covers/` 에 기본 커버가 있으면 slug 해시 기반으로 안정적인 기본 이미지가 자동 할당됩니다 (`heroImage` 는 나중에 직접 변경 가능).
+
+## 새 페이지 만들기
+
+`new-post` 는 블로그 글만 생성합니다. 커스텀 페이지는 아래 명령으로 생성하세요:
+
+```bash
+npm run new-page -- projects --theme base
+```
+
+지원 테마: `base`, `ai`, `cyber`, `hacker`, `matrix`.  
+명령은 `src/pages/[lang]/projects.astro` 를 만들고 `getStaticPaths()` 로 모든 로케일 라우트를 생성합니다.
+
+예시:
+
+```bash
+npm run new-page -- projects --theme base
+npm run new-page -- projects --theme ai
+npm run new-page -- projects --theme cyber
+npm run new-page -- projects --theme hacker
+npm run new-page -- projects --theme matrix
+```
+
+## 언어
+
+[English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Español](README.es.md) · 한국어 (현재 문서)
+
+## 미리보기
+
+| 홈 | 블로그 목록 |
+| --- | --- |
+| ![Home preview](public/images/theme-previews/preview-home.png) | ![Blog list preview](public/images/theme-previews/preview-blog-list.png) |
+
+| 글 상세 (모니터 열림) | 글 상세 (모니터 접힘) |
+| --- | --- |
+| ![Blog post open preview](public/images/theme-previews/preview-blog-post-open.png) | ![Blog post collapsed preview](public/images/theme-previews/preview-blog-post-collapsed.png) |
+
+| About |
+| --- |
+| ![About preview](public/images/theme-previews/preview-about.png) |
+
+## 라우트별 분위기
+
+- `/`: Matrix 스타일 터미널 랜딩
+- `/:lang/blog`: 사이버펑크 아카이브 무드
+- `/:lang/blog/[slug]`: AI 인터페이스형 읽기 레이아웃
+- `/:lang/about`: 선택형 해커 스타일 About 페이지
+
+## 주요 기능
+
+- Astro 5 정적 출력
+- Markdown + MDX 콘텐츠 컬렉션
+- 기본 로케일: `en`, `ja`, `ko`, `es`, `zh`
+- 로케일별 RSS 피드
+- sitemap + robots 지원
+- 설정 중심의 커스터마이징
+- 짧은 페이지에서도 Footer 하단 고정
 
 ## 테마 설정
 

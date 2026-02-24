@@ -29,6 +29,66 @@ Or with `pnpm`:
 pnpm create astro@latest --template voidtem/astro-theme-anglefeint
 ```
 
+## Requirements
+
+- Node.js `18+` (LTS recommended)
+- Package manager: `npm`, `pnpm`, `yarn`, or `bun`
+
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+Build and preview:
+
+```bash
+npm run build
+npm run preview
+```
+
+With `pnpm`:
+
+```bash
+pnpm install
+pnpm dev
+pnpm build
+pnpm preview
+```
+
+## Create New Post
+
+Create the same slug in all locales (`en`, `ja`, `ko`, `es`, `zh`):
+
+```bash
+npm run new-post -- my-first-post
+```
+
+Slug rule: use lowercase letters, numbers, and hyphens only (example: `my-first-post`).
+If default covers exist in `src/assets/blog/default-covers/`, a stable cover is auto-assigned by slug hash (you can replace `heroImage` later).
+
+## Create New Page
+
+`new-post` creates blog content only. For custom pages, use:
+
+```bash
+npm run new-page -- projects --theme base
+```
+
+Available themes: `base`, `ai`, `cyber`, `hacker`, `matrix`.
+The command creates `src/pages/[lang]/projects.astro` with locale routes via `getStaticPaths()`.
+
+Examples:
+
+```bash
+npm run new-page -- projects --theme base
+npm run new-page -- projects --theme ai
+npm run new-page -- projects --theme cyber
+npm run new-page -- projects --theme hacker
+npm run new-page -- projects --theme matrix
+```
+
 ## Languages
 
 English (this file) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Español](README.es.md) · [한국어](README.ko.md)
@@ -63,63 +123,6 @@ English (this file) · [简体中文](README.zh-CN.md) · [日本語](README.ja.
 - Sitemap + robots support
 - Config-driven customization
 - Sticky footer (viewport-bottom on short pages)
-
-## Requirements
-
-- Node.js `18+` (LTS recommended)
-- Package manager: `npm`, `pnpm`, `yarn`, or `bun`
-
-## Quick Start
-
-```bash
-npm install
-npm run dev
-```
-
-Build and preview:
-
-```bash
-npm run build
-npm run preview
-```
-
-With `pnpm`:
-
-```bash
-pnpm install
-pnpm dev
-pnpm build
-pnpm preview
-```
-
-## Deploy to Cloudflare Workers
-
-This theme ships with `wrangler.jsonc` for static asset deployment.
-
-```bash
-# one-time login
-npx wrangler login
-
-# update worker/service name in wrangler.jsonc first
-# then deploy
-npm run cf:deploy
-```
-
-Dry run before a real deploy:
-
-```bash
-npm run cf:deploy:dry
-```
-
-## Create New Post
-
-Create the same slug in all locales (`en`, `ja`, `ko`, `es`, `zh`):
-
-```bash
-npm run new-post -- my-first-post
-```
-
-Slug rule: use lowercase letters, numbers, and hyphens only (example: `my-first-post`).
 
 ## Theme Setup
 
