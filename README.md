@@ -1,3 +1,14 @@
+---
+doc_id: readme_en
+doc_role: user-guide
+doc_purpose: End-user setup, usage, and upgrade guide for the template.
+doc_scope: [setup, commands, themes, config, routing]
+update_triggers: [command-change, theme-naming, config-change, routing-change, i18n-change]
+source_of_truth: true
+depends_on: [docs/ARCHITECTURE.md, docs/VISUAL_SYSTEMS.md]
+sync_targets: [README.zh-CN.md, README.ja.md, README.es.md, README.ko.md]
+---
+
 <h1 align="center">Anglefeint</h1>
 <p align="center">A cinematic, multi-atmosphere Astro theme for personal publishing.</p>
 
@@ -20,13 +31,13 @@
 ## Template Install
 
 ```bash
-npm create astro@latest -- --template voidtem/astro-theme-anglefeint
+npm create astro@latest -- --template voidtem/astro-theme-anglefeint#starter
 ```
 
 Or with `pnpm`:
 
 ```bash
-pnpm create astro@latest --template voidtem/astro-theme-anglefeint
+pnpm create astro@latest --template voidtem/astro-theme-anglefeint#starter
 ```
 
 ## Requirements
@@ -55,6 +66,17 @@ pnpm install
 pnpm dev
 pnpm build
 pnpm preview
+```
+
+## Upgrade Theme
+
+For projects created from `#starter`, upgrade with:
+
+```bash
+npm update @anglefeint/astro-theme
+npm install
+npm run check
+npm run build
 ```
 
 ## Create New Post
@@ -114,6 +136,12 @@ English (this file) · [简体中文](README.zh-CN.md) · [日本語](README.ja.
 - `/:lang/blog/[slug]`: AI-interface reading layout
 - `/:lang/about`: optional hacker-style profile page
 
+## Theme Naming Contract
+
+- Theme variants: `base`, `ai`, `cyber`, `hacker`, `matrix`
+- Internal selectors/scripts use aligned prefixes: `ai-*`, `cyber-*`, `hacker-*`
+- Core composition follows: `ThemeFrame -> Shell -> Layout -> Page`
+
 ## Features
 
 - Astro 5 static output
@@ -127,17 +155,18 @@ English (this file) · [简体中文](README.zh-CN.md) · [日本語](README.ja.
 ## Theme Setup
 
 1. Copy `.env.example` to `.env` and set site identity variables.
-2. Update social links in `src/config/social.ts`.
-3. Edit About content in `src/config/about.ts`.
-4. Toggle About route/nav with `ENABLE_ABOUT_PAGE` in `src/config/theme.ts`.
-5. Replace starter posts in `src/content/blog/<locale>/`.
+2. Edit `src/site.config.ts`:
+   - `social.links` for header/footer links
+   - `about` for About content/runtime text
+   - `theme.enableAboutPage` for About route/nav toggle
+3. Replace starter posts in `src/content/blog/<locale>/`.
+4. Set your real site URL (`PUBLIC_SITE_URL` or `src/site.config.ts`) before production deploy.
 
 ## Configuration Surface
 
-- Site identity: `src/config/site.ts` (or `PUBLIC_*` env vars)
-- Theme behavior: `src/config/theme.ts`
-- About content/runtime text: `src/config/about.ts`
-- Social links: `src/config/social.ts`
+- Single entry: `src/site.config.ts`
+- Adapters (do not edit directly): `src/config/site.ts`, `src/config/theme.ts`, `src/config/about.ts`, `src/config/social.ts`
+- Environment override supported: `PUBLIC_*` vars for site identity
 
 ## Docs
 
@@ -147,6 +176,11 @@ English (this file) · [简体中文](README.zh-CN.md) · [日本語](README.ja.
 - Theme listing draft: `ASTRO_THEME_LISTING.md`
 - Upgrading guide: `UPGRADING.md`
 - Changelog: `CHANGELOG.md`
+
+## Credits
+
+- Parts of the base typography CSS are adapted from Bear Blog defaults (MIT).  
+  Source note is preserved in `src/styles/global.css`.
 
 ## License
 

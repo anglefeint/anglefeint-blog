@@ -1,29 +1,29 @@
 {
-  "name": "astro-theme-anglefeint",
+  "name": "anglefeint-blog",
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=18"
+    "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "check": "astro check",
     "preview": "astro preview",
-    "new-post": "node scripts/new-post.mjs",
-    "new-page": "node scripts/new-page.mjs",
+    "new-post": "node ./node_modules/@anglefeint/astro-theme/src/cli-new-post.mjs",
+    "new-page": "node ./node_modules/@anglefeint/astro-theme/src/cli-new-page.mjs",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.7.0",
-    "astro": "^5.17.1",
+    "@anglefeint/astro-theme": "^0.1.18",
+    "@astrojs/mdx": "5.0.0-beta.9",
+    "@astrojs/rss": "4.0.15-beta.4",
+    "@astrojs/sitemap": "3.6.1-beta.3",
+    "astro": "6.0.0-beta.17",
     "sharp": "^0.34.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
-    "typescript": "^5.9.3",
-    "wrangler": "^4.65.0"
+    "@astrojs/check": "0.9.7-beta.1",
+    "typescript": "^5.9.3"
   }
 }
