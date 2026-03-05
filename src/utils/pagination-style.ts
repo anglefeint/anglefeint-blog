@@ -1,12 +1,12 @@
+import { clamp, int } from './number';
+
 type PaginationStyleMode = 'random' | 'sequential' | 'fixed';
-type PaginationStableBy = 'page' | 'locale' | 'slug';
 
 interface PaginationStyleConfig {
   ENABLED: boolean;
   MODE: PaginationStyleMode;
   VARIANTS: number;
   FIXED_VARIANT: number;
-  STABLE_BY: PaginationStableBy;
 }
 
 interface ResolvePaginationVariantOptions {
@@ -15,15 +15,6 @@ interface ResolvePaginationVariantOptions {
   locale: string;
   pathname: string;
   config: PaginationStyleConfig;
-}
-
-function clamp(value: number, min: number, max: number): number {
-  return Math.max(min, Math.min(max, value));
-}
-
-function int(value: number): number {
-  if (!Number.isFinite(value)) return 0;
-  return Math.floor(value);
 }
 
 function hashString(value: string): number {
@@ -51,13 +42,7 @@ export function resolvePaginationVariant(options: ResolvePaginationVariantOption
   } else if (mode === 'sequential') {
     variant = ((Math.max(1, int(options.currentPage)) - 1) % variants) + 1;
   } else {
-    const stableBy = options.config.STABLE_BY;
-    const seedKey =
-      stableBy === 'locale'
-        ? options.locale
-        : stableBy === 'slug'
-          ? options.pathname
-          : `${options.locale}:${options.currentPage}:${options.totalPages}`;
+    const seedKey = `${options.locale}:${options.pathname}:${options.currentPage}:${options.totalPages}`;
     variant = (hashString(seedKey) % variants) + 1;
   }
 

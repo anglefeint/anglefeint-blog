@@ -23,11 +23,20 @@ export const THEME = {
       MODE: THEME_CONFIG.theme.pagination.style.mode,
       VARIANTS: THEME_CONFIG.theme.pagination.style.variants,
       FIXED_VARIANT: THEME_CONFIG.theme.pagination.style.fixedVariant,
-      STABLE_BY: THEME_CONFIG.theme.pagination.style.stableBy,
     },
   },
   /** Optional visual effects switches */
   EFFECTS: {
     ENABLE_RED_QUEEN: THEME_CONFIG.theme.effects.enableRedQueen,
+  },
+  /** Optional comments integration (Giscus) */
+  COMMENTS: {
+    ENABLED: THEME_CONFIG.theme.comments.enabled,
+    REPO: THEME_CONFIG.theme.comments.repo,
+    REPO_ID: THEME_CONFIG.theme.comments.repoId,
+    CATEGORY: THEME_CONFIG.theme.comments.category,
+    CATEGORY_ID: THEME_CONFIG.theme.comments.categoryId,
+    THEME: THEME_CONFIG.theme.comments.theme,
+    LANG: THEME_CONFIG.theme.comments.lang,
   },
 } as const;
