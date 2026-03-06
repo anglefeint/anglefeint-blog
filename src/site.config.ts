@@ -2,325 +2,22 @@
  * Single user-facing config entry for Anglefeint.
  * Edit this file only. Other files under src/config/* and src/i18n/* are adapters.
  */
-import { deepMerge, type DeepPartial } from '@anglefeint/astro-theme/utils/merge';
+import { defineThemeConfig } from './site.config.defaults.ts';
 
-export type LocaleCode = 'en' | 'ja' | 'ko' | 'es' | 'zh';
-
-export interface SocialLink {
-  href: string;
-  label: string;
-  icon?: 'mastodon' | 'twitter' | 'github';
-}
-
-export interface AboutConfig {
-  metaLine: string;
-  sections: {
-    who: string;
-    what: string;
-    ethos: string[];
-    now: string;
-    contactLead: string;
-    signature: string;
-  };
-  contact: {
-    email: string;
-    githubUrl: string;
-    githubLabel: string;
-  };
-  sidebar: {
-    dlData: string;
-    ai: string;
-    decryptor: string;
-    help: string;
-    allScripts: string;
-  };
-  scriptsPath: string;
-  labels: {
-    modalOutput: string;
-    modalClose: string;
-    responseOutput: string;
-    contactEmailLead: string;
-    contactConnectLead: string;
-    backToTop: string;
-    quickAccess: string;
-    contactEmailLabel: string;
-  };
-  modals: {
-    dlData: {
-      title: string;
-      subtitle: string;
-    };
-    ai: {
-      title: string;
-      lines: string[];
-    };
-    decryptor: {
-      title: string;
-      header: string;
-      keysLabel: string;
-      currentPassphraseLabel: string;
-      masterKeyLabel: string;
-      transientKeyLabel: string;
-    };
-    help: {
-      title: string;
-      statsLabel: string;
-      typedPrefix: string;
-      typedSuffix: string;
-    };
-    allScripts: {
-      title: string;
-    };
-  };
-  effects: {
-    backgroundLines: string[];
-    scrollToasts: {
-      p30: string;
-      p60: string;
-      p90: string;
-    };
-  };
-}
-
-export interface ThemeConfig {
-  site: {
-    title: string;
-    description: string;
-    url: string;
-    author: string;
-    tagline: string;
-    heroByLocale: Record<LocaleCode, string>;
-  };
-  theme: {
-    blogPageSize: number;
-    homeLatestCount: number;
-    enableAboutPage: boolean;
-    pagination: {
-      windowSize: number;
-      showJumpThreshold: number;
-      jump: {
-        enabled: boolean;
-        enterToGo: boolean;
-      };
-      style: {
-        enabled: boolean;
-        mode: 'random' | 'sequential' | 'fixed';
-        variants: number;
-        fixedVariant: number;
-      };
-    };
-    effects: {
-      enableRedQueen: boolean;
-    };
-    comments: {
-      enabled: boolean;
-      repo: string;
-      repoId: string;
-      category: string;
-      categoryId: string;
-      mapping: 'pathname' | 'url' | 'title' | 'og:title' | 'specific' | 'number';
-      term: string;
-      number: string;
-      strict: '0' | '1';
-      reactionsEnabled: '0' | '1';
-      emitMetadata: '0' | '1';
-      inputPosition: 'top' | 'bottom';
-      theme: string;
-      lang: string;
-      loading: 'lazy' | 'eager';
-      crossorigin: 'anonymous' | 'use-credentials';
-    };
-  };
-  i18n: {
-    defaultLocale: LocaleCode;
-    supportedLocales: LocaleCode[];
-    localeLabels: Record<LocaleCode, string>;
-  };
-  social: {
-    links: SocialLink[];
-  };
-  aboutByLocale: Record<LocaleCode, AboutConfig>;
-}
-
-const defaultAboutConfig: AboutConfig = {
-  metaLine: '$ profile booted | mode: builder',
-  sections: {
-    who: 'Write a short introduction about yourself, your background, and your primary focus areas.',
-    what: 'Describe what you build, your core skills, and the kinds of projects you want to be known for.',
-    ethos: [
-      'Prioritize clarity before complexity.',
-      'Favor maintainable systems over one-off solutions.',
-      'Ship in small iterations and learn from feedback.',
-      'Communicate directly and document decisions.',
-    ],
-    now: 'Share what you are currently building, shipping, or learning.',
-    contactLead:
-      'Add a short collaboration note (for example: open to freelance, consulting, or full-time roles).',
-    signature: '> Replace with your own signature.',
-  },
-  contact: {
-    email: 'you@example.com',
-    githubUrl: 'https://github.com/yourname',
-    githubLabel: 'GitHub',
-  },
-  sidebar: {
-    dlData: 'DL Data',
-    ai: 'AI',
-    decryptor: 'Decryptor',
-    help: 'Help',
-    allScripts: 'All Scripts',
-  },
-  scriptsPath: '/root/bash/scripts',
-  labels: {
-    modalOutput: 'Output',
-    modalClose: 'Close',
-    responseOutput: 'Output',
-    contactEmailLead: 'Reach me via',
-    contactConnectLead: 'or connect on',
-    backToTop: 'Back to top',
-    quickAccess: 'Quick access',
-    contactEmailLabel: 'email',
-  },
-  modals: {
-    dlData: {
-      title: 'Downloading...',
-      subtitle: 'Critical Data',
-    },
-    ai: {
-      title: 'AI',
-      lines: [
-        '~ $ ai --status --verbose',
-        '',
-        'model: anglefeint-core',
-        'mode: reasoning + builder',
-        'context window: 128k',
-        'tools: codex / cursor / claude-code',
-        'latency: 120-220ms',
-        'safety: guardrails enabled',
-        '',
-        '>> system online',
-        '>> ready for execution',
-      ],
-    },
-    decryptor: {
-      title: 'Password Decryptor',
-      header: 'Calculating Hashes',
-      keysLabel: 'keys tested',
-      currentPassphraseLabel: 'Current passphrase:',
-      masterKeyLabel: 'Master key',
-      transientKeyLabel: 'Transient key',
-    },
-    help: {
-      title: 'Help',
-      statsLabel: 'Stats & Achievements',
-      typedPrefix: 'You typed:',
-      typedSuffix: 'characters',
-    },
-    allScripts: {
-      title: '/root/bash/scripts',
-    },
-  },
-  effects: {
-    backgroundLines: [
-      '~ $ ls -la',
-      'total 42',
-      'drwxr-xr-x  12 user  staff   384  Jan 12  about  blog  projects',
-      'drwxr-xr-x   8 user  staff   256  Jan 11  .config  .ssh  keys',
-      '-rw-r--r--   1 user  staff  2048  Jan 10  README.md  .env.gpg',
-      '-rwxr-xr-x   1 user  staff   512  Jan  9  deploy.sh  script',
-      '~ $ cat .motd',
-      '>> welcome | access granted',
-    ],
-    scrollToasts: {
-      p30: 'context parsed',
-      p60: 'inference stable',
-      p90: 'output finalized',
-    },
-  },
-};
-
-const defaultThemeConfig: ThemeConfig = {
-  site: {
-    title: 'My Blog',
-    description:
-      'Cinematic web interfaces, AI-era engineering notes, and system architecture essays.',
-    url: 'https://example.com',
-    author: 'Your Name',
-    tagline: 'Built with Astro.',
-    heroByLocale: {
-      en: 'Write a short introduction for your site and what readers can expect from your posts.',
-      ja: 'このサイトの紹介文と、読者がどんな記事を期待できるかを書いてください。',
-      ko: '사이트 소개와 방문자가 어떤 글을 기대할 수 있는지 간단히 작성하세요.',
-      es: 'Escribe una breve presentación del sitio y qué tipo de contenido encontrarán tus lectores.',
-      zh: '在这里写一段站点简介，并告诉读者你将发布什么类型的内容。',
-    },
-  },
-  theme: {
-    blogPageSize: 9,
-    homeLatestCount: 3,
-    enableAboutPage: true,
-    pagination: {
-      windowSize: 7,
-      showJumpThreshold: 12,
-      jump: {
-        enabled: true,
-        enterToGo: true,
-      },
-      style: {
-        enabled: true,
-        mode: 'random',
-        variants: 9,
-        fixedVariant: 1,
-      },
-    },
-    effects: {
-      enableRedQueen: true,
-    },
-    comments: {
-      enabled: true,
-      repo: 'anglefeint/anglefeint-blog',
-      repoId: 'R_kgDORTJJlg',
-      category: 'Comments',
-      categoryId: 'DIC_kwDORTJJls4C3wsb',
-      mapping: 'pathname',
-      term: '',
-      number: '',
-      strict: '0',
-      reactionsEnabled: '1',
-      emitMetadata: '0',
-      inputPosition: 'top',
-      theme: 'dark',
-      lang: '',
-      loading: 'lazy',
-      crossorigin: 'anonymous',
-    },
-  },
-  i18n: {
-    defaultLocale: 'en',
-    supportedLocales: ['en', 'ja', 'ko', 'es', 'zh'],
-    localeLabels: {
-      en: 'English',
-      ja: '日本語',
-      ko: '한국어',
-      es: 'Español',
-      zh: '中文',
-    },
-  },
-  social: {
-    links: [],
-  },
-  aboutByLocale: {
-    en: defaultAboutConfig,
-    ja: defaultAboutConfig,
-    ko: defaultAboutConfig,
-    es: defaultAboutConfig,
-    zh: defaultAboutConfig,
-  },
-};
-
-export function defineThemeConfig(config: DeepPartial<ThemeConfig>): ThemeConfig {
-  return deepMerge(defaultThemeConfig, config);
-}
+export type {
+  AboutConfig,
+  LocaleCode,
+  LocaleConfig,
+  LocaleMetaConfig,
+  LocaleSiteConfig,
+  NormalizedLocaleConfig,
+  NormalizedThemeI18nConfig,
+  SocialLink,
+  ThemeConfig,
+  ThemeI18nConfig,
+} from './site.config.schema.ts';
+export { DEFAULT_ABOUT_CONFIG, defineThemeConfig } from './site.config.defaults.ts';
+export { normalizeI18nConfig } from './site.config.runtime.ts';
 
 /**
  * Edit this object only.
@@ -328,25 +25,15 @@ export function defineThemeConfig(config: DeepPartial<ThemeConfig>): ThemeConfig
  */
 export const THEME_CONFIG = defineThemeConfig({
   // Example:
-  // site: { title: "My Site Title" },
-  // theme: {
-  //   comments: {
-  //     enabled: true,
-  //     repo: "your-org/your-repo",
-  //     repoId: "R_kgDOxxxxxx",
-  //     category: "Comments",
-  //     categoryId: "DIC_kwDOxxxxxx",
-  //     mapping: "pathname",
-  //     term: "",
-  //     number: "",
-  //     strict: "0",
-  //     reactionsEnabled: "1",
-  //     emitMetadata: "0",
-  //     inputPosition: "top",
-  //     theme: "dark",
-  //     lang: "en",
-  //     loading: "lazy",
-  //     crossorigin: "anonymous",
+  // i18n: {
+  //   defaultLocale: 'en',
+  //   locales: {
+  //     en: {
+  //       meta: { label: 'English', hreflang: 'en', ogLocale: 'en_US' },
+  //       site: { hero: 'Your localized hero copy.' },
+  //       about: { metaLine: '$ profile booted | mode: builder' },
+  //       messages: { nav: { home: 'Home' } },
+  //     },
   //   },
   // },
 });

@@ -63,6 +63,8 @@ npm run preview
 ```bash
 npm run lint
 npm run format:check
+npm run e2e:install
+npm run e2e
 ```
 
 `pnpm` 사용:
@@ -76,7 +78,7 @@ pnpm preview
 
 ## 테마 업그레이드
 
-`#starter` 로 생성한 프로젝트는 아래로 업그레이드합니다:
+`#starter` 로 생성한 프로젝트에서 package 업데이트를 가져올 때는 먼저 아래를 실행합니다:
 
 ```bash
 npm update @anglefeint/astro-theme
@@ -87,6 +89,8 @@ npm run doctor
 npm run check
 npm run build
 ```
+
+release note 에 starter 쪽 contract 변경이 적혀 있으면 그 변경도 프로젝트에 동기화해야 합니다. `npm update` 는 공개 package 만 업데이트합니다.
 
 커스텀 코드가 `src/consts` 또는 `@anglefeint/astro-theme/consts` 를 참조하고 있다면 `src/config/site.ts` 로 마이그레이션하세요.
 
@@ -108,9 +112,9 @@ Slug 규칙: 소문자 영문, 숫자, 하이픈만 사용하세요 (예: `my-fi
 선택 로케일 지정:
 
 ```bash
-npm run new-post -- my-first-post --locales en,ja
+npm run new-post -- my-first-post --locales en,fr
 # 또는
-ANGLEFEINT_LOCALES=en,ja npm run new-post -- my-first-post
+ANGLEFEINT_LOCALES=en,fr npm run new-post -- my-first-post
 ```
 
 URL 규칙:
@@ -162,7 +166,7 @@ npm run new-page -- projects --theme matrix
 
 ## 라우트별 분위기
 
-- `/`: Matrix 스타일 터미널 랜딩
+- `/<default-locale>/` (기본적으로 `/` 는 여기로 리다이렉트): Matrix 스타일 터미널 랜딩
 - `/:lang/blog`: 사이버펑크 아카이브 무드
 - `/:lang/blog/[slug]`: AI 인터페이스형 읽기 레이아웃
 - `/:lang/about`: 선택형 해커 스타일 About 페이지
@@ -177,7 +181,7 @@ npm run new-page -- projects --theme matrix
 
 - Astro 6 정적 출력 (beta 트랙)
 - Markdown + MDX 콘텐츠 컬렉션
-- 기본 로케일: `en`, `ja`, `ko`, `es`, `zh`
+- 스타터에 포함된 예시 로케일: `en`, `ja`, `ko`, `es`, `zh`
 - 로케일별 RSS 피드
 - sitemap + robots 지원
 - 설정 중심의 커스터마이징
@@ -187,8 +191,11 @@ npm run new-page -- projects --theme matrix
 
 1. `.env.example` 를 `.env` 로 복사하고 사이트 정보를 설정합니다.
 2. `src/site.config.ts` 를 수정합니다:
+   - `i18n.defaultLocale`: 기본 언어를 설정
+   - `i18n.routing.defaultLocalePrefix`: 기본 언어를 `/<default-locale>/`(기본값) 또는 `/` 중 어디에 둘지 설정
+   - `i18n.locales`: 지원 언어를 한 곳에서 추가/제거하는 단일 소스
    - `social.links`: 소셜 링크
-   - `aboutByLocale`: 로케일별 About 콘텐츠와 런타임 문구
+   - `i18n.locales.<code>.about`: 로케일별 About 콘텐츠와 런타임 문구
    - `theme.enableAboutPage`: About 노출 제어
    - `theme.effects.enableRedQueen`: 글 상세 사이드 모니터 이펙트 on/off
    - `theme.comments`: Giscus 활성화/설정 (핵심 ID + 동작 파라미터)
