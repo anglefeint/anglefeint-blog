@@ -64,6 +64,8 @@ Quality commands:
 ```bash
 npm run lint
 npm run format:check
+npm run e2e:install
+npm run e2e
 ```
 
 With `pnpm`:
@@ -77,7 +79,7 @@ pnpm preview
 
 ## Upgrade Theme
 
-For projects created from `#starter`, upgrade with:
+For package updates in projects created from `#starter`, start with:
 
 ```bash
 npm update @anglefeint/astro-theme
@@ -89,6 +91,8 @@ npm run check
 npm run build
 ```
 
+If release notes mention starter-side contract changes, pull those changes into your project as well. `npm update` alone only updates the published package.
+
 If your custom code still imports `src/consts` or `@anglefeint/astro-theme/consts`, migrate to `src/config/site.ts`.
 
 For Astro major-version migrations, follow the official Astro guide first:
@@ -98,7 +102,7 @@ For Astro major-version migrations, follow the official Astro guide first:
 
 ## Create New Post
 
-Create the same slug in all locales (`en`, `ja`, `ko`, `es`, `zh`):
+Create the same slug in all configured locales:
 
 ```bash
 npm run new-post -- my-first-post
@@ -109,16 +113,16 @@ If default covers exist in `src/assets/blog/default-covers/`, a stable cover is 
 Optional locale override:
 
 ```bash
-npm run new-post -- my-first-post --locales en,ja
+npm run new-post -- my-first-post --locales en,fr
 # or
-ANGLEFEINT_LOCALES=en,ja npm run new-post -- my-first-post
+ANGLEFEINT_LOCALES=en,fr npm run new-post -- my-first-post
 ```
 
 How URL works:
 
-- File: `src/content/blog/en/my-first-post.md`
-- URL: `/en/blog/my-first-post/`
-- Blog list: `/en/blog/`
+- File: `src/content/blog/<locale>/my-first-post.md`
+- URL: `/<locale>/blog/my-first-post/`
+- Blog list: `/<locale>/blog/`
 - You do not need to add routes manually. Astro generates them from content files at build time.
 
 ## Create New Page
@@ -163,7 +167,7 @@ English (this file) · [简体中文](README.zh-CN.md) · [日本語](README.ja.
 
 ## Route Atmospheres
 
-- `/`: Matrix-inspired terminal landing
+- `/<default-locale>/` (with `/` redirecting there by default): Matrix-inspired terminal landing
 - `/:lang/blog`: cyberpunk archive mood
 - `/:lang/blog/[slug]`: AI-interface reading layout
 - `/:lang/about`: optional hacker-style profile page
@@ -178,7 +182,7 @@ English (this file) · [简体中文](README.zh-CN.md) · [日本語](README.ja.
 
 - Astro 6 static output (beta track)
 - Markdown + MDX content collections
-- Built-in locales: `en`, `ja`, `ko`, `es`, `zh`
+- Starter ships sample locales: `en`, `ja`, `ko`, `es`, `zh`
 - Per-locale RSS feeds
 - Sitemap + robots support
 - Config-driven customization
@@ -188,8 +192,13 @@ English (this file) · [简体中文](README.zh-CN.md) · [日本語](README.ja.
 
 1. Copy `.env.example` to `.env` and set site identity variables.
 2. Edit `src/site.config.ts`:
+   - `i18n.defaultLocale` to set the canonical root locale
+   - `i18n.routing.defaultLocalePrefix` to choose whether the default locale lives at `/<default-locale>/` (default) or `/`
+   - `i18n.locales` to add/remove supported locales from a single source
+   - `i18n.locales.<code>.messages` for localized UI copy overrides
+   - `i18n.locales.<code>.site.hero` for localized home hero copy
+   - `i18n.locales.<code>.about` for localized About content/runtime text
    - `social.links` for header/footer links
-   - `aboutByLocale` for localized About content/runtime text
    - `theme.enableAboutPage` for About route/nav toggle
    - `theme.effects.enableRedQueen` to enable/disable the post-side monitor effect
    - `theme.comments` to enable and configure Giscus (core IDs + behavior options)
