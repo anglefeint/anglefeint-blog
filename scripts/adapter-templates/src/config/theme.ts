@@ -1,5 +1,25 @@
 import { THEME_CONFIG } from '../site.config';
 
+const commentsConfig = THEME_CONFIG.theme.comments;
+const normalizedCommentTerm = commentsConfig.term.trim();
+const normalizedCommentNumber = commentsConfig.number.trim();
+const hasValidCommentNumber =
+  /^[1-9]\d*$/.test(normalizedCommentNumber) &&
+  Number.isSafeInteger(Number(normalizedCommentNumber));
+
+if (commentsConfig.enabled) {
+  if (commentsConfig.mapping === 'specific' && !normalizedCommentTerm) {
+    throw new Error(
+      '[theme.comments] mapping="specific" requires a non-empty theme.comments.term.'
+    );
+  }
+  if (commentsConfig.mapping === 'number' && !hasValidCommentNumber) {
+    throw new Error(
+      '[theme.comments] mapping="number" requires theme.comments.number to be a positive integer string (e.g. "1").'
+    );
+  }
+}
+
 /**
  * Theme behavior config.
  */
@@ -36,7 +56,16 @@ export const THEME = {
     REPO_ID: THEME_CONFIG.theme.comments.repoId,
     CATEGORY: THEME_CONFIG.theme.comments.category,
     CATEGORY_ID: THEME_CONFIG.theme.comments.categoryId,
+    MAPPING: THEME_CONFIG.theme.comments.mapping,
+    TERM: normalizedCommentTerm,
+    NUMBER: normalizedCommentNumber,
+    STRICT: THEME_CONFIG.theme.comments.strict,
+    REACTIONS_ENABLED: THEME_CONFIG.theme.comments.reactionsEnabled,
+    EMIT_METADATA: THEME_CONFIG.theme.comments.emitMetadata,
+    INPUT_POSITION: THEME_CONFIG.theme.comments.inputPosition,
     THEME: THEME_CONFIG.theme.comments.theme,
     LANG: THEME_CONFIG.theme.comments.lang,
+    LOADING: THEME_CONFIG.theme.comments.loading,
+    CROSSORIGIN: THEME_CONFIG.theme.comments.crossorigin,
   },
 } as const;
