@@ -24,16 +24,29 @@ export { normalizeI18nConfig } from './site.config.runtime.ts';
  * Omitted fields safely fall back to theme defaults.
  */
 export const THEME_CONFIG = defineThemeConfig({
-  // Example:
-  // i18n: {
-  //   defaultLocale: 'en',
-  //   locales: {
-  //     en: {
-  //       meta: { label: 'English', hreflang: 'en', ogLocale: 'en_US' },
-  //       site: { hero: 'Your localized hero copy.' },
-  //       about: { metaLine: '$ profile booted | mode: builder' },
-  //       messages: { nav: { home: 'Home' } },
-  //     },
-  //   },
-  // },
+  social: {
+    links: [
+      { href: 'https://github.com/anglefeint', label: 'GitHub', icon: 'github' },
+      { href: 'https://x.com/anglefeint', label: 'X', icon: 'twitter' },
+      { href: 'https://mastodon.social/@anglefeint', label: 'Mastodon', icon: 'mastodon' },
+    ],
+  },
+  theme: {
+    comments: {
+      enabled: true,
+      repo: 'anglefeint/anglefeint-blog',
+      repoId: 'R_kgDORTJJlg',
+      category: 'Comments',
+      categoryId: 'DIC_kwDORTJJls4C3wsb',
+      mapping: 'pathname',
+      strict: '0',
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      inputPosition: 'top',
+      theme: 'dark',
+      lang: 'en',
+      loading: 'lazy',
+      crossorigin: 'anonymous',
+    },
+  },
 });
