@@ -24,6 +24,31 @@ export { normalizeI18nConfig } from './site.config.runtime.ts';
  * Omitted fields safely fall back to theme defaults.
  */
 export const THEME_CONFIG = defineThemeConfig({
+  social: {
+    links: [
+      { href: 'https://github.com/anglefeint', label: 'GitHub', icon: 'github' },
+      { href: 'https://x.com/anglefeint', label: 'X', icon: 'twitter' },
+      { href: 'https://mastodon.social/@anglefeint', label: 'Mastodon', icon: 'mastodon' },
+    ],
+  },
+  theme: {
+    comments: {
+      enabled: true,
+      repo: 'anglefeint/anglefeint-blog',
+      repoId: 'R_kgDORTJJlg',
+      category: 'Comments',
+      categoryId: 'DIC_kwDORTJJls4C3wsb',
+      mapping: 'pathname',
+      strict: '0',
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      inputPosition: 'top',
+      theme: 'dark',
+      lang: 'en',
+      loading: 'lazy',
+      crossorigin: 'anonymous',
+    },
+  },
   i18n: {
     locales: {
       fr: {
