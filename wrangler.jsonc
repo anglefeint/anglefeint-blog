@@ -2,9 +2,9 @@
   "name": "anglefeint-blog",
   "compatibility_date": "2026-03-06",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
   },
   "observability": {
-    "enabled": true
-  },"name": "anglefeint-blog"
+    "enabled": true,
+  },
 }
