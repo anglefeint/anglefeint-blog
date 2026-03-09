@@ -6,7 +6,7 @@ Short essays, reflections, and long-range bets.
 
 ---
 
-# Anglefeint
+# Anglefeint / 直角假身
 
 关于 AI、创业、系统，以及未来演化路径的笔记。
 
