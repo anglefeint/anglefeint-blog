@@ -23,12 +23,12 @@
     "doctor": "npm run check:adapters && npm run check",
     "check": "npm run check:no-build && npm run check:about-runtime",
     "preview": "astro preview",
-    "new-post": "node ./scripts/new-post.mjs",
-    "new-page": "node ./scripts/new-page.mjs",
+    "new-post": "anglefeint-new-post",
+    "new-page": "anglefeint-new-page",
     "astro": "astro"
   },
   "dependencies": {
-    "@anglefeint/astro-theme": "^0.2.8",
+    "@anglefeint/astro-theme": "^0.2.11",
     "@astrojs/mdx": "^5.0.3",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
