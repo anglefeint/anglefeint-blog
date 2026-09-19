@@ -1,3 +1,11 @@
+// Distribution destinations may use a neutral source instead of demo configuration.
+export const STARTER_SOURCE_OVERRIDES = {
+  'src/site.config.ts': 'scripts/starter-templates/site.config.ts.template',
+};
+
+export const starterSourcePath = (destination) =>
+  STARTER_SOURCE_OVERRIDES[destination] ?? destination;
+
 export const ADAPTER_TEMPLATE_MAP = [
   ['scripts/adapter-templates/src/config/site.ts', 'src/config/site.ts'],
   ['scripts/adapter-templates/src/config/theme.ts', 'src/config/theme.ts'],
@@ -30,6 +38,8 @@ export const STARTER_CONTENT_MANAGED_FILES = STARTER_CONTENT_LOCALES.flatMap((lo
 
 export const STARTER_OBSOLETE_FILES = [
   'scripts/regenerate-starter.mjs',
+  'scripts/new-page.mjs',
+  'scripts/new-post.mjs',
   'tools/maintainer/sync-starter.mjs',
   'docs/MAINTAINER_WORKFLOW.md',
   'src/components/pagination/CyberPagination.astro',
@@ -38,16 +48,26 @@ export const STARTER_OBSOLETE_FILES = [
 ];
 
 export const STARTER_SUPPORT_SCRIPTS = [
+  'scripts/check-scaffold.mjs',
+  'scripts/check-workspace-link.mjs',
+  'scripts/doctor.mjs',
+  'scripts/starter-package.mjs',
   'scripts/check-about-runtime-config.mjs',
   'scripts/check-adapter-contract.mjs',
-  'scripts/new-page.mjs',
-  'scripts/new-post.mjs',
   'scripts/resolve-theme-default-i18n-entry.mjs',
+  'scripts/resolve-site-url.mjs',
   'scripts/starter-manifest.mjs',
   'scripts/sync-adapters.mjs',
 ];
 
 export const STARTER_STATIC_MANAGED_FILES = [
+  'astro.config.mjs',
+  'src/pages/index.astro',
+  'src/pages/robots.txt.ts',
+  'src/pages/[lang]/tags/index.astro',
+  'src/pages/[lang]/tags/[tag]/[...page].astro',
+  'src/content.config.ts',
+  'src/utils/metrics.ts',
   'README.md',
   'README.meta.yaml',
   'README.zh-CN.md',
@@ -70,6 +90,7 @@ export const STARTER_STATIC_MANAGED_FILES = [
   'src/pages/[lang]/index.astro',
   'src/pages/[lang]/rss.xml.ts',
   'src/scripts/cyber-rain-dust.js',
+  'src/components/CyberAtmosphere.astro',
   'src/site.config.ts',
   'src/site.config.defaults.ts',
   'src/site.config.runtime.ts',

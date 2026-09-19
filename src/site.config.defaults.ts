@@ -105,12 +105,18 @@ const defaultThemeConfig: ThemeConfig = {
       'Cinematic web interfaces, AI-era engineering notes, and system architecture essays.',
     url: 'https://example.com',
     author: 'Your Name',
-    tagline: 'Built with Astro.',
+    tagline: '',
   },
   theme: {
+    footer: { showCredits: true },
+    music: { enabled: false, tracks: [] },
     blogPageSize: 9,
     homeLatestCount: 3,
     enableAboutPage: true,
+    tags: { enabled: true },
+    toc: { enabled: true },
+    search: { enabled: true },
+    socialImage: { enabled: true },
     pagination: {
       windowSize: 7,
       showJumpThreshold: 12,
@@ -199,7 +205,7 @@ const defaultThemeConfig: ThemeConfig = {
       },
       zh: {
         meta: {
-          label: '中文',
+          label: '简体中文',
           hreflang: 'zh-CN',
           ogLocale: 'zh_CN',
           fallback: ['en'],

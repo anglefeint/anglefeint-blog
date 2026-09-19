@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 // Edit scripts/adapter-templates/src/config/theme.ts and run `npm run sync-adapters`.
 
+import { normalizeMusic } from '@anglefeint/astro-theme/utils/music';
 import { THEME_CONFIG } from '../site.config.ts';
 
 const commentsConfig = THEME_CONFIG.theme.comments;
@@ -27,12 +28,19 @@ if (commentsConfig.enabled) {
  * Theme behavior config.
  */
 export const THEME = {
+  FOOTER: { SHOW_CREDITS: THEME_CONFIG.theme.footer?.showCredits ?? true },
+  MUSIC: normalizeMusic(THEME_CONFIG.theme.music),
   /** Posts per page on blog list */
   BLOG_PAGE_SIZE: THEME_CONFIG.theme.blogPageSize,
   /** Number of latest posts shown on home page */
   HOME_LATEST_COUNT: THEME_CONFIG.theme.homeLatestCount,
   /** Whether to enable the About page (disable to hide from nav/routes if needed) */
   ABOUT_PAGE_ENABLED: THEME_CONFIG.theme.enableAboutPage,
+  /** Default for article contents; individual posts may override it. */
+  TOC: { ENABLED: THEME_CONFIG.theme.toc?.enabled ?? true },
+  SEARCH: { ENABLED: THEME_CONFIG.theme.search?.enabled ?? true },
+  TAGS: { ENABLED: THEME_CONFIG.theme.tags?.enabled ?? true },
+  SOCIAL_IMAGE: { ENABLED: THEME_CONFIG.theme.socialImage?.enabled ?? true },
   /** Pagination behavior and style strategy for blog list */
   PAGINATION: {
     WINDOW_SIZE: THEME_CONFIG.theme.pagination.windowSize,

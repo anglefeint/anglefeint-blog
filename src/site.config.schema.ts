@@ -88,9 +88,19 @@ export interface ThemeConfig {
     tagline: string;
   };
   theme: {
+    footer: { showCredits: boolean };
+    music: { enabled: boolean; tracks: { title: string; artist?: string; src: string }[] };
     blogPageSize: number;
     homeLatestCount: number;
     enableAboutPage: boolean;
+    tags: { enabled: boolean };
+    socialImage: { enabled: boolean };
+    toc: {
+      enabled: boolean;
+    };
+    search: {
+      enabled: boolean;
+    };
     pagination: {
       windowSize: number;
       showJumpThreshold: number;

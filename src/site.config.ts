@@ -24,7 +24,21 @@ export { normalizeI18nConfig } from './site.config.runtime.ts';
  * Omitted fields safely fall back to theme defaults.
  */
 export const THEME_CONFIG = defineThemeConfig({
+  // Hide theme and Astro credits; copyright and custom site.tagline remain.
+  // theme: { footer: { showCredits: false } },
+  // Optional music: put your audio in public/music/, then enable a playlist.
+  // theme: { music: { enabled: true, tracks: [{ title: 'My Song', src: '/music/my-song.mp3' }] } },
+  // Article contents are enabled by default. Per-post `toc: true/false` overrides this.
+  // theme: { toc: { enabled: false } },
+  // Tag browsing: theme: { tags: { enabled: false } }
+  // Automatic article share images: theme: { socialImage: { enabled: false } }
+  // Per-post `ogImage` always takes priority and does not change the hero image.
+  // Search is enabled by default; builds generate its index automatically.
+  // To disable: theme: { search: { enabled: false } }
   // Example:
+  // Language menu names use i18n.locales.<code>.meta.label.
+  // Chinese defaults to 简体中文. To customize only its display name:
+  // i18n: { locales: { zh: { meta: { label: '中文' } } } },
   // i18n: {
   //   defaultLocale: 'en',
   //   locales: {

@@ -36,7 +36,11 @@ const blogPosts = postsForLocale(allPosts, locale).map((p) => ({
 }));
 
 const escapeHtml = (value: string): string =>
-  value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
 
 const aiBody = `<pre>${ABOUT_CONFIG.modals.ai.lines.map(escapeHtml).join('\n')}</pre>`;
 const decryptorBody = `<pre class="hacker-decryptor-pre">${escapeHtml(ABOUT_CONFIG.modals.decryptor.header)}
@@ -297,10 +301,16 @@ const aboutRuntimeConfig = {
           <h2 class="about-section-title">05 / {messages.about.contact}</h2>
           <p>
             {ABOUT_CONFIG.sections.contactLead}
-            {ABOUT_CONFIG.labels.contactEmailLead}
-            <a href={`mailto:${ABOUT_CONFIG.contact.email}`}
-              >{ABOUT_CONFIG.labels.contactEmailLabel}</a
-            >
+            {
+              ABOUT_CONFIG.contact.email.trim() && (
+                <>
+                  {ABOUT_CONFIG.labels.contactEmailLead}
+                  <a href={`mailto:${ABOUT_CONFIG.contact.email}`}>
+                    {ABOUT_CONFIG.labels.contactEmailLabel}
+                  </a>
+                </>
+              )
+            }
             {ABOUT_CONFIG.labels.contactConnectLead}
             <a href={ABOUT_CONFIG.contact.githubUrl} target="_blank" rel="noopener noreferrer"
               >{ABOUT_CONFIG.contact.githubLabel}</a

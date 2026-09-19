@@ -2,23 +2,22 @@
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import search from '@anglefeint/astro-theme/search';
+import socialImage from '@anglefeint/astro-theme/social-image';
+import { THEME } from './src/config/theme';
 import { defineConfig } from 'astro/config';
-import { existsSync } from 'node:fs';
 import { URL, fileURLToPath } from 'node:url';
+import { resolveThemeDefaultI18nEntry } from './scripts/resolve-theme-default-i18n-entry.mjs';
 import { SITE_URL } from './src/config/site';
+import { resolveSiteUrl } from './scripts/resolve-site-url.mjs';
+import { DEFAULT_LOCALE, DEFAULT_LOCALE_PREFIX_MODE } from './src/i18n/config';
 
-const THEME_DEFAULT_I18N_LOCAL = './packages/theme/src/i18n/messages.ts';
-const THEME_DEFAULT_I18N_NODE_MODULES =
-  './node_modules/@anglefeint/astro-theme/src/i18n/messages.ts';
-const themeDefaultI18nEntry = existsSync(
-  fileURLToPath(new URL(THEME_DEFAULT_I18N_LOCAL, import.meta.url))
-)
-  ? THEME_DEFAULT_I18N_LOCAL
-  : THEME_DEFAULT_I18N_NODE_MODULES;
+const themeDefaultI18nEntry = resolveThemeDefaultI18nEntry(import.meta.url);
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE_URL,
+  compressHTML: true,
+  site: resolveSiteUrl(SITE_URL, fileURLToPath(new URL('.', import.meta.url))),
   vite: {
     resolve: {
       alias: {
@@ -32,11 +31,19 @@ export default defineConfig({
   },
   integrations: [
     mdx(),
+    socialImage(),
+    search({ enabled: THEME.SEARCH.ENABLED }),
     sitemap({
       filter: (page) => {
-        // Exclude /en/ — it redirects to / (root is canonical for English home)
         const path = new URL(page).pathname;
-        return path !== '/en/' && path !== '/en';
+        const localizedDefaultHome = `/${DEFAULT_LOCALE}/`;
+        const localizedDefaultHomeNoSlash = `/${DEFAULT_LOCALE}`;
+
+        if (DEFAULT_LOCALE_PREFIX_MODE === 'always') {
+          return path !== '/';
+        }
+
+        return path !== localizedDefaultHome && path !== localizedDefaultHomeNoSlash;
       },
     }),
   ],
