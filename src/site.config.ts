@@ -24,6 +24,20 @@ export { normalizeI18nConfig } from './site.config.runtime.ts';
  * Omitted fields safely fall back to theme defaults.
  */
 export const THEME_CONFIG = defineThemeConfig({
+  theme: {
+    music: {
+      enabled: true,
+      tracks: [
+        { title: 'Luv(sic) Part 3', src: '/music/luv-sic-pt-3.mp3' },
+        { title: "Travelers' Encore", src: '/music/travelers-encore.mp3' },
+        { title: 'His Theme', src: '/music/his-theme.mp3' },
+        { title: 'Storm Fury', src: '/music/storm-fury.mp3' },
+        { title: 'Kage - Stage 1', src: '/music/kage-stage-1.mp3' },
+        { title: 'The Last Meal', src: '/music/the-last-meal.mp3' },
+        { title: 'Sparkle', src: '/music/sparkle.mp3' },
+      ],
+    },
+  },
   // Hide theme and Astro credits; copyright and custom site.tagline remain.
   // theme: { footer: { showCredits: false } },
   // Optional music: put your audio in public/music/, then enable a playlist.
