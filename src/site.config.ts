@@ -24,6 +24,15 @@ export { normalizeI18nConfig } from './site.config.runtime.ts';
  * Omitted fields safely fall back to theme defaults.
  */
 export const THEME_CONFIG = defineThemeConfig({
+  site: {
+    url: 'https://anglefeint.com',
+  },
+  i18n: {
+    defaultLocale: 'en',
+    routing: {
+      defaultLocalePrefix: 'never',
+    },
+  },
   theme: {
     music: {
       enabled: true,
