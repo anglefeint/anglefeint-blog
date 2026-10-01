@@ -25,6 +25,7 @@ export { normalizeI18nConfig } from './site.config.runtime.ts';
  */
 export const THEME_CONFIG = defineThemeConfig({
   site: {
+    title: 'AngleFeint',
     url: 'https://anglefeint.com',
   },
   i18n: {
