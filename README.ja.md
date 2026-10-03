@@ -1,4 +1,7 @@
 <h1 align="center">Anglefeint</h1>
+
+[English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [繁體中文](README.zh-Hant.md)
+
 <p align="center">映画的な表現と複数の雰囲気を持つ Astro テーマです。</p>
 
 <p align="center">
@@ -10,12 +13,16 @@
 </p>
 
 <p align="center">
-  <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.2-BC52EE?logo=astro&logoColor=white" />
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.5-BC52EE?logo=astro&logoColor=white" />
   <img alt="Node" src="https://img.shields.io/badge/Node.js-22.12%2B-339933?logo=node.js&logoColor=white" />
-  <img alt="Locales" src="https://img.shields.io/badge/i18n-en%20%7C%20ja%20%7C%20ko%20%7C%20es%20%7C%20zh-0A7EA4" />
+  <img alt="Locales" src="https://img.shields.io/badge/i18n-9%20languages-0A7EA4" />
   <img alt="Deployment" src="https://img.shields.io/badge/Deploy-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white" />
   <img alt="License" src="https://img.shields.io/badge/License-MIT-2EA043" />
 </p>
+
+## 使用する言語を選ぶ
+
+標準で9言語が有効です：`en`、`ja`、`ko`、`es`、`zh`、`pt-br`、`de`、`ru`、`zh-hant`。既定は英語です。不要な言語は `src/site.config.ts` で `i18n.locales.<code>.meta.enabled: false` にします。設定の省略では無効にならず、既定言語は常に有効です。`new-post` は初期状態で9ファイルを作成しますが、自動翻訳はしません。日本語だけ作成する場合：`npm run new-post -- my-post --locales ja`。
 
 ## テンプレートの導入
 
@@ -63,6 +70,35 @@ pnpm dev
 pnpm build
 pnpm preview
 ```
+
+## 初期設定：サイト情報とホームの URL
+
+公開前に、`src/site.config.ts` 内の既存の `defineThemeConfig({...})` オブジェクトを編集してください。以下の項目を既存の設定に統合し、ファイルの import/export、言語設定、機能設定は残します。タイトル、著者名、`https://your-domain.example` は自分の情報に置き換えてください。
+
+```ts
+export const THEME_CONFIG = defineThemeConfig({
+  site: {
+    title: '私のブログ',
+    author: 'あなたの名前',
+    url: 'https://your-domain.example',
+  },
+  i18n: {
+    defaultLocale: 'ja',
+    routing: {
+      defaultLocalePrefix: 'never',
+    },
+  },
+});
+```
+
+**ホームへのアクセス方法を選びます：**
+
+- `'always'`（テーマの既定値）：`/` から `/<既定の言語>/`（初期設定では `/en/`）へ移動します。ホームが表示される前に **「Redirecting to home…」** が一瞬見える場合があります。
+- `'never'`（上の例）：`/` に既定言語のホームを直接表示するため、ルート URL では中間のリダイレクト画面を経由しません。`/<既定の言語>/` は `/` に戻ります。この例の既定言語は日本語です。
+
+`defaultLocale` には、有効な言語（`ja`、`en`、`zh`、`ko`、`es` など）を指定します。この設定が変えるのは既定言語の**ホーム**だけです。ブログや記事には引き続き `/ja/blog/` のような言語プレフィックスが付きます。
+
+canonical、フィード、サイトマップに正しいドメインを使うため、`site.url` に本番サイトの URL を設定してください。環境ファイルやホスティングのビルド設定に `PUBLIC_SITE_URL` がある場合は、そちらが優先されるため併せて確認します。変更後は再ビルドしてデプロイしてください（`npm run build`、または連携済みホスティングのビルド）。ローカルファイルの編集だけでは公開サイトは更新されません。
 
 ## テーマのアップグレード
 
@@ -175,7 +211,7 @@ npm run new-page -- projects --theme matrix
 - コードのコピーと本文画像のプレビュー
 - Astro 7 の静的出力
 - Markdown + MDX コンテンツコレクション
-- スターター同梱のサンプルロケール: `en`, `ja`, `ko`, `es`, `zh`
+- スターター同梱のサンプルロケール: `en`, `ja`, `ko`, `es`, `zh`, `pt-br`, `de`, `ru`, `zh-hant`
 - ロケール別 RSS
 - Sitemap + robots 対応
 - 設定駆動のカスタマイズ
@@ -283,7 +319,7 @@ MDX 内の Markdown 見出しに対応しますが、コンポーネントが生
 
 `src/site.config.ts` の `theme: { socialImage: { enabled: false } }` で自動生成を停止できます。手動画像は常に優先され、それ以外は既存のカバーまたは既定画像に戻ります。変更後は再ビルド・デプロイしてください。生成先は `dist/_social/`、正確な URL は記事 HTML の `og:image` にあります。共有先のキャッシュは即時更新されない場合があります。
 
-同梱フォントで標準の5言語に対応し、画像 API やブラウザー JS は不要です。長いタイトルは画像内のみ省略します。すべての絵文字や文字体系は保証しません。ビルド時間とインストール容量は増えますが、記事ページへのフォント追加配信はありません。
+同梱フォントで標準の9言語に対応し、画像 API やブラウザー JS は不要です。長いタイトルは画像内のみ省略します。すべての絵文字や文字体系は保証しません。ビルド時間とインストール容量は増えますが、記事ページへのフォント追加配信はありません。
 
 ## ライセンス
 
@@ -302,4 +338,6 @@ theme: {
 },
 ```
 
-各曲に `title` と `src` を指定し、`artist` は任意です。HTTPS の音声 URL も利用できます。空のリストでは表示されません。再生を押して初めて音声を読み込みます。同じタブのセッション内で曲・再生位置・音量を保存しますが、ページ移動後は再生を押す必要があり、途切れない再生には対応しません。
+各曲に `title` と `src` を指定し、`artist` は任意です。HTTPS の音声 URL も利用できます。空のリストでは表示されません。初回訪問では PLAY を押してから音声を読み込みます。同じタブのセッション内で曲・位置・音量を記憶します。再生中にページ移動、再読み込み、戻る・進むを行うと保存位置からの再生を試み、手動で一時停止した場合は停止状態を保ちます。短い途切れが生じる場合があり、シームレス再生ではありません。ブラウザーが自動再生をブロックした場合は PLAY を押してください。削除された曲の代わりに別の曲を自動再生しません。ストレージが使えない場合も手動再生は可能ですが、セッションの再生再開はできません。
+
+再生前に曲全体をダウンロードしてブラウザーの Blob に変換するため、シークにサーバーの HTTP Range 対応は不要です。大きなファイルや遅い回線では待ち時間とメモリー使用量が増えます。一時停止からの再開は読み込み済みの曲を再利用し、曲の切り替え時に古い曲を解放します。ページ移動後は再読み込みしますが、ブラウザーの HTTP キャッシュが利用される場合があります。外部音源にはクロスオリジン取得を許可する CORS 設定が必要です。同一サイトの `public/music/` に置けば、この設定は不要です。

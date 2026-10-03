@@ -1,4 +1,7 @@
 <h1 align="center">Anglefeint</h1>
+
+[English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [繁體中文](README.zh-Hant.md)
+
 <p align="center">一个具有电影感、多氛围切换的 Astro 个人发布主题。</p>
 
 <p align="center">
@@ -10,12 +13,16 @@
 </p>
 
 <p align="center">
-  <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.2-BC52EE?logo=astro&logoColor=white" />
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.5-BC52EE?logo=astro&logoColor=white" />
   <img alt="Node" src="https://img.shields.io/badge/Node.js-22.12%2B-339933?logo=node.js&logoColor=white" />
-  <img alt="Locales" src="https://img.shields.io/badge/i18n-en%20%7C%20ja%20%7C%20ko%20%7C%20es%20%7C%20zh-0A7EA4" />
+  <img alt="Locales" src="https://img.shields.io/badge/i18n-9%20languages-0A7EA4" />
   <img alt="Deployment" src="https://img.shields.io/badge/Deploy-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white" />
   <img alt="License" src="https://img.shields.io/badge/License-MIT-2EA043" />
 </p>
+
+## 选择需要的语言
+
+默认启用九种语言：`en`、`ja`、`ko`、`es`、`zh`、`pt-br`、`de`、`ru`、`zh-hant`，默认语言仍为英语。在 `src/site.config.ts` 中为不需要的语言设置 `i18n.locales.<code>.meta.enabled: false`；省略配置不会禁用，默认语言始终启用。`new-post` 初始会创建九份文章骨架，不会自动翻译。只创建简体中文：`npm run new-post -- my-post --locales zh`。
 
 ## 模板安装
 
@@ -63,6 +70,35 @@ pnpm dev
 pnpm build
 pnpm preview
 ```
+
+## 首次配置：站点信息与首页地址
+
+发布前，编辑 `src/site.config.ts` 中已有的 `defineThemeConfig({...})` 对象。把以下字段合并到现有配置中，保留文件的导入、导出及已有语言和功能设置；将示例标题、作者和 `https://your-domain.example` 换成自己的信息。
+
+```ts
+export const THEME_CONFIG = defineThemeConfig({
+  site: {
+    title: '我的博客',
+    author: '你的名字',
+    url: 'https://your-domain.example',
+  },
+  i18n: {
+    defaultLocale: 'zh',
+    routing: {
+      defaultLocalePrefix: 'never',
+    },
+  },
+});
+```
+
+**选择打开域名时如何进入首页：**
+
+- `'always'`（主题默认）：`/` 跳转到 `/<默认语言>/`，初始配置下是 `/en/`。访客可能短暂看到 **“Redirecting to home…”**，然后进入首页。
+- `'never'`（上面的示例）：`/` 直接显示默认语言首页，访问根域名时不再经过这个跳转页；`/<默认语言>/` 则跳回 `/`。示例将中文设为默认语言。
+
+`defaultLocale` 可选择已启用的 `zh`、`en`、`ja`、`ko`、`es` 等语言。这个设置只改变默认语言的**首页**地址，博客和文章仍保留语言前缀，例如 `/zh/blog/`。
+
+`site.url` 应填写真实生产域名，确保 canonical、订阅源和 sitemap 使用正确地址。如果环境文件或托管平台构建设置中配置了 `PUBLIC_SITE_URL`，它会覆盖 `site.url`，也需要一起核对。修改后须重新构建并部署（运行 `npm run build`，或由已连接的托管平台执行构建）；只修改本地文件不会更新线上站点。
 
 ## 升级主题
 
@@ -310,4 +346,6 @@ theme: {
 },
 ```
 
-每首歌填写 `title`、`src`，`artist` 可选，也支持 HTTPS 音频直链。空歌单不显示播放器。点击播放后才加载音频；同一标签页会话内记住曲目、进度和音量，切页后需要再次点击播放，不支持跨页面无缝播放。
+每首歌填写 `title`、`src`，`artist` 可选，也支持 HTTPS 音频直链。空歌单不显示播放器。首次访问时，点击 PLAY 后才加载音频。同一标签页会话内记住曲目、进度和音量；此前正在播放时，切页、刷新或前进后退会尝试从保存位置续播，主动暂停后仍保持暂停。切页可能短暂停顿，不是无缝播放。浏览器阻止自动播放时，点击 PLAY 继续。原曲目被删除时不会自动播放替代曲目。存储不可用时仍可手动播放，但无法会话续播。
+
+播放前会完整下载当前歌曲，转成浏览器 Blob 后再播放，因此进度跳转不依赖服务器的 HTTP Range 支持。大文件或慢网络会增加等待时间和内存占用。暂停后继续会复用已加载的歌曲，切歌会释放旧歌曲；切页后重新加载，浏览器 HTTP 缓存可能减少下载。外部音频服务器必须允许跨域下载（CORS）；放在 `public/music/` 中的同站点文件不需要跨域配置。

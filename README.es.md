@@ -1,4 +1,7 @@
 <h1 align="center">Anglefeint</h1>
+
+[English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [繁體中文](README.zh-Hant.md)
+
 <p align="center">Un tema Astro cinematográfico con varias atmósferas para publicación personal.</p>
 
 <p align="center">
@@ -10,12 +13,16 @@
 </p>
 
 <p align="center">
-  <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.2-BC52EE?logo=astro&logoColor=white" />
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.5-BC52EE?logo=astro&logoColor=white" />
   <img alt="Node" src="https://img.shields.io/badge/Node.js-22.12%2B-339933?logo=node.js&logoColor=white" />
-  <img alt="Locales" src="https://img.shields.io/badge/i18n-en%20%7C%20ja%20%7C%20ko%20%7C%20es%20%7C%20zh-0A7EA4" />
+  <img alt="Locales" src="https://img.shields.io/badge/i18n-9%20languages-0A7EA4" />
   <img alt="Deployment" src="https://img.shields.io/badge/Deploy-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white" />
   <img alt="License" src="https://img.shields.io/badge/License-MIT-2EA043" />
 </p>
+
+## Elegir idiomas
+
+Se activan nueve idiomas: `en`, `ja`, `ko`, `es`, `zh`, `pt-br`, `de`, `ru`, `zh-hant`; inglés sigue siendo el predeterminado. Desactiva cada idioma innecesario con `i18n.locales.<code>.meta.enabled: false` en `src/site.config.ts`. Omitirlo no lo desactiva; el idioma predeterminado permanece activo. `new-post` crea inicialmente nueve plantillas, sin traducir el contenido. Para crear solo español: `npm run new-post -- my-post --locales es`.
 
 ## Instalación con plantilla
 
@@ -63,6 +70,35 @@ pnpm dev
 pnpm build
 pnpm preview
 ```
+
+## Primera configuración: identidad del sitio y URL de inicio
+
+Antes de publicar, edita el objeto `defineThemeConfig({...})` que ya existe en `src/site.config.ts`. Integra estos campos en tus ajustes y conserva los import/export del archivo y la configuración de idiomas y funciones existente. Sustituye el título, el autor y `https://your-domain.example` por tus propios datos.
+
+```ts
+export const THEME_CONFIG = defineThemeConfig({
+  site: {
+    title: 'Mi blog personal',
+    author: 'Tu nombre',
+    url: 'https://your-domain.example',
+  },
+  i18n: {
+    defaultLocale: 'es',
+    routing: {
+      defaultLocalePrefix: 'never',
+    },
+  },
+});
+```
+
+**Elige cómo se accede a la página de inicio:**
+
+- `'always'` (valor predeterminado del tema): `/` redirige a `/<idioma-predeterminado>/`, inicialmente `/en/`. Puede aparecer brevemente **«Redirecting to home…»** antes de llegar al inicio.
+- `'never'` (el ejemplo anterior): `/` muestra directamente el inicio en el idioma predeterminado, sin esa página intermedia al visitar la raíz. `/<idioma-predeterminado>/` redirige a `/`. El ejemplo usa español como idioma predeterminado.
+
+Elige un idioma habilitado, como `es`, `en`, `zh`, `ja` o `ko`, para `defaultLocale`. Este ajuste solo cambia la **página de inicio** del idioma predeterminado; el blog y los artículos conservan su prefijo de idioma, por ejemplo `/es/blog/`.
+
+Configura `site.url` con la URL real de producción para que los enlaces canonical, los feeds y el sitemap usen el dominio correcto. Si defines `PUBLIC_SITE_URL` en un archivo de entorno o en la configuración de compilación del alojamiento, ese valor tiene prioridad sobre `site.url`; revísalo también. Tras cambiar la configuración, vuelve a compilar y desplegar (`npm run build` o la compilación del alojamiento conectado). Editar solo el archivo local no actualiza el sitio publicado.
 
 ## Actualizar tema
 
@@ -175,7 +211,7 @@ npm run new-page -- projects --theme matrix
 - Copia de código y vista previa de imágenes del artículo
 - Salida estática con Astro 7
 - Colecciones de contenido Markdown + MDX
-- El starter incluye idiomas de ejemplo: `en`, `ja`, `ko`, `es`, `zh`
+- El starter incluye idiomas de ejemplo: `en`, `ja`, `ko`, `es`, `zh`, `pt-br`, `de`, `ru`, `zh-hant`
 - RSS por idioma
 - Soporte para sitemap + robots
 - Personalización orientada a configuración
@@ -283,7 +319,7 @@ Disponible desde 0.5.0 con el starter correspondiente; 0.4.0 no incluye esta fun
 
 En `src/site.config.ts`, `theme: { socialImage: { enabled: false } }` desactiva la generación. Las imágenes explícitas siguen teniendo prioridad; los demás artículos usan su portada o la imagen predeterminada. Reconstruye y despliega tras cambiar contenido. Los PNG están en `dist/_social/`; `og:image` del HTML indica la URL exacta. Las plataformas pueden conservar vistas previas en caché.
 
-Las fuentes incluidas cubren los cinco idiomas iniciales, sin API de imágenes ni JS de navegador. Los títulos largos se abrevian solo en la imagen. No se garantizan todos los emojis ni otros sistemas de escritura. Aumentan el tiempo de compilación y el tamaño de instalación, pero las páginas no descargan estas fuentes adicionales.
+Las fuentes incluidas cubren los nueve idiomas incluidos, sin API de imágenes ni JS de navegador. Los títulos largos se abrevian solo en la imagen. No se garantizan todos los emojis ni otros sistemas de escritura. Aumentan el tiempo de compilación y el tamaño de instalación, pero las páginas no descargan estas fuentes adicionales.
 
 ## Licencia
 
@@ -302,4 +338,6 @@ theme: {
 },
 ```
 
-Cada pista acepta `title`, `src` y un `artist` opcional. También admite URL HTTPS de audio. Una lista vacía oculta el reproductor. El audio se carga al pulsar Reproducir. Se recuerdan pista, posición y volumen durante la sesión de la pestaña; tras navegar, pulsa Reproducir para continuar. No ofrece reproducción ininterrumpida entre páginas.
+Cada pista acepta `title`, `src` y un `artist` opcional. También admite URL HTTPS de audio. Una lista vacía oculta el reproductor. En la primera visita, el audio solo se carga al pulsar PLAY. La sesión de la pestaña recuerda pista, posición y volumen. Si se estaba reproduciendo, al navegar, recargar o usar Atrás/Adelante se intenta continuar desde la posición guardada; una pausa manual se mantiene. Puede haber una breve interrupción: no es reproducción continua entre páginas. Si el navegador bloquea la reproducción automática, pulsa PLAY. Si se elimina la pista, no se reproduce otra automáticamente. Sin almacenamiento, la reproducción manual sigue funcionando, pero no se puede reanudar la sesión.
+
+Antes de reproducir, se descarga la pista completa y se convierte en un Blob del navegador, por lo que el salto de posición no depende de HTTP Range. Los archivos grandes o las conexiones lentas aumentan la espera y el uso de memoria. Pausar y continuar reutiliza la pista cargada; cambiar de pista libera la anterior. Al navegar se vuelve a cargar, aunque la caché HTTP del navegador puede ayudar. Los servidores de audio externos deben permitir descargas entre orígenes (CORS); los archivos del mismo sitio en `public/music/` no requieren esa configuración.
