@@ -35,6 +35,20 @@ export const THEME_CONFIG = defineThemeConfig({
     },
   },
   theme: {
+    comments: {
+      enabled: true,
+      repo: 'anglefeint/anglefeint-blog',
+      repoId: 'R_kgDORTJJlg',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDORTJJls4C3wr3',
+      mapping: 'pathname',
+      strict: '1',
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      inputPosition: 'bottom',
+      theme: 'catppuccin_macchiato',
+      lang: '',
+    },
     music: {
       enabled: true,
       tracks: [
