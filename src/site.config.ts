@@ -29,6 +29,13 @@ export const THEME_CONFIG = defineThemeConfig({
     title: 'AngleFeint',
     url: 'https://anglefeint.com',
   },
+  social: {
+    links: [
+      { href: 'https://x.com/anglefeint', label: 'X', icon: 'twitter' },
+      { href: 'https://mastodon.social/@anglefeint', label: 'Mastodon', icon: 'mastodon' },
+      { href: 'https://github.com/anglefeint', label: 'GitHub', icon: 'github' },
+    ],
+  },
   i18n: {
     defaultLocale: 'en',
     routing: {
