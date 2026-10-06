@@ -28,6 +28,7 @@ export const THEME_CONFIG = defineThemeConfig({
   site: {
     title: 'AngleFeint',
     url: 'https://anglefeint.com',
+    tagline: 'Articles: All rights reserved. · Hosted on Cloudflare.',
   },
   social: {
     links: [
