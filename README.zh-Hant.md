@@ -1,31 +1,46 @@
-# Anglefeint
-
-為個人部落格打造的電影感 Astro 主題。
-
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [繁體中文](README.zh-Hant.md)
+
+<p align="center">
+  <a href="https://demo.anglefeint.com/zh-hant/">
+    <img src="public/images/theme-previews/anglefeint-brand.webp" alt="Anglefeint — Matrix / Cyberpunk / Hacker / AI" width="1600" />
+  </a>
+</p>
+
+<p align="center">為個人部落格打造的電影感 Astro 主題。</p>
 
 [Demo](https://demo.anglefeint.com/zh-hant/) · [GitHub](https://github.com/anglefeint/astro-theme-anglefeint)
 
+<p align="center">
+  <a href="#installation">安裝</a> · <a href="#setup">設定指南</a>
+</p>
+
+<p align="center">
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.5-BC52EE?logo=astro&logoColor=white" />
+  <img alt="Locales" src="https://img.shields.io/badge/i18n-9%20languages-0A7EA4" />
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-2EA043" />
+</p>
+
+<a id="installation"></a>
+
 ```bash
-npm create astro@latest -- --template anglefeint/astro-theme-anglefeint#starter
+npm create astro@latest -- my-blog --template anglefeint/astro-theme-anglefeint#starter --no-install
 ```
 
-## 語言
-
-預設啟用九種語言：`en`、`ja`、`ko`、`es`、`zh`、`pt-br`、`de`、`ru`、`zh-hant`。`new-post` 初始會建立九份骨架，不會自動翻譯。請在 `src/site.config.ts` 以 `meta.enabled: false` 關閉不需要的語言，省略設定不會停用，預設語言會保持啟用。只建立繁體中文：`npm run new-post -- my-post --locales zh-hant`。
+<a id="setup"></a>
 
 ## 使用指南 1：設定你的部落格
 
 ### 安裝並在本機開啟
 
-使用 Node.js 22.12.0 或更新版本。在精靈中選擇資料夾，例如 my-blog，並讓 cd 指向實際建立的位置。若精靈已安裝相依套件，可略過 npm install。
+使用 Node.js 22.12.0 或更新版本。上方指令只需執行一次，會建立新的 `my-blog` 資料夾並略過相依套件安裝。完成其餘精靈提示後繼續下方步驟；若更改資料夾名稱，也要調整 `cd`。
 
 ```bash
-npm create astro@latest -- --template anglefeint/astro-theme-anglefeint#starter
 cd my-blog
 npm install
 npm run dev
 ```
+
+開發伺服器會持續執行。執行後續指令前，按 `Ctrl+C` 停止它，或另開終端並進入 `my-blog`。以下指令都在專案資料夾內執行，不必再次建立專案。
 
 開啟終端顯示的網址。若使用 pnpm，仍以相同 npm 指令建立專案，略過精靈的安裝步驟，再執行 pnpm install 與 pnpm dev。
 
@@ -75,11 +90,10 @@ i18n: {
 每種語言都有歡迎文章與三篇指南。先備份，再刪除不需要的範例；保留其他文章仍在使用的圖片。
 
 ```bash
-npm run new-post -- my-first-post
-# --locales en,pt-br
+npm run new-post -- my-first-post --locales zh-hant
 ```
 
-指令會為每個啟用的語言建立骨架，初始設定共九份。它不會自動翻譯，也不會覆寫現有檔案。請編輯 src/content/blog/zh-hant/my-first-post.md 的標題、描述與正文。
+先建立一篇繁體中文文章。省略 `--locales zh-hant` 才會為所有啟用語言建立骨架（初始共九份），不會自動翻譯，也不會覆寫現有檔案。 請編輯 src/content/blog/zh-hant/my-first-post.md 的標題、描述與正文。
 
 ### 檢查與部署
 
@@ -96,13 +110,16 @@ doctor 包含檢查與建置。preview 僅在本機顯示結果，不會發布�
 
 - [使用指南 2：撰寫與整理內容](https://demo.anglefeint.com/zh-hant/blog/starter-guide-2-languages-and-routing/)
 
+## 語言
+
+預設啟用九種語言：`en`、`ja`、`ko`、`es`、`zh`、`pt-br`、`de`、`ru`、`zh-hant`。`new-post` 初始會建立九份骨架，不會自動翻譯。請在 `src/site.config.ts` 以 `meta.enabled: false` 關閉不需要的語言，省略設定不會停用，預設語言會保持啟用。只建立繁體中文：`npm run new-post -- my-post --locales zh-hant`。
+
 ## 使用指南 2：撰寫與整理內容
 
 ### 建立文章
 
 ```bash
-npm run new-post -- my-first-post
-# --locales en,pt-br
+npm run new-post -- my-first-post --locales zh-hant
 ```
 
 只建立繁體中文可用 npm run new-post -- my-first-post --locales zh-hant。slug 使用小寫英文字母、數字與連字號。src/content/blog/zh-hant/my-first-post.md 對應 /zh-hant/blog/my-first-post/。現有檔案不會被覆寫。--locales 只建立檔案，不會啟用語言。
@@ -144,6 +161,8 @@ tags: ['astro', 'notes'] 會產生 /zh-hant/tags/ 等頁面。標籤區分大小
 
 未指定 ogImage 時，建置會用標題、作者與網站名稱產生 1200×630 PNG，不影響 heroImage。自訂圖片可使用 ogImage: ./share.png 或 /images/share.png，也支援 HTTPS。缺少本機檔案會報錯，外部圖片則依賴外部服務。
 
+自動分享圖使用主題內附的代碼雨、終端與霓虹網路背景，網站名稱、標題和作者仍使用你的內容。右下角的小字 `Theme by Anglefeint` 沿用 `theme.footer.showCredits`（預設 `true`）；設為 `false` 會同時隱藏頁尾與圖片署名，修改後請重新建置部署。自訂 `ogImage` 不會被修改。背景離線使用，不增加瀏覽器 JavaScript。
+
 明確設定的 ogImage 優先。theme.socialImage.enabled: false 只停用自動產生，其他文章回退到封面或預設圖。檢查 HTML 的 og:image 與 dist/\_social/。分享平台可能快取舊圖，不保證支援所有 emoji 與文字系統。
 
 ### 獨立頁面
@@ -167,6 +186,20 @@ theme: {
 每首曲目包含 title、src 與選填 artist，空清單會隱藏播放器。首次播放需點擊。分頁工作階段會記住曲目、進度與音量，但恢復播放取決於瀏覽器政策，跨頁可能有短暫中斷。最後一首結束後回到第一首。
 
 播放器先下載完整音檔再播放，大檔案會增加等待與記憶體使用。外部音檔需要 CORS；本機檔案沒有這項要求。enabled: false 可停用播放器。
+
+### 選用：Google Analytics 4
+
+在 `src/site.config.ts` 現有的 `defineThemeConfig({...})` 物件中新增或修改以下頂層設定（與 `site` 同層，不放在 `theme` 內）：
+
+```ts
+analytics: {
+  googleAnalyticsId: 'G-XXXXXXXXXX',
+},
+```
+
+在 Google Analytics → 管理 → 資料串流 → 網站串流中複製 **評估 ID**（`G-...`），不是資源名稱或數字資源 ID。留空即停用。所有語言和主題頁面共用一個 ID，可依頁面路徑區分語言。重新建置部署後，瀏覽線上網站，在 GA4 即時報表中確認資料。
+
+開發模式及 localhost/回環位址預覽不傳送資料；設定後，遠端預覽和區域網路位址預覽會統計。預設範本不載入 Google 指令碼。不要透過 GTM、Zaraz 或手動程式碼重複接入相同統計。本選項不包含 Cookie 同意橫幅或同意管理；有此需求的網站應先完成對應設定，再啟用統計。指令碼封鎖工具可能阻止資料收集。舊專案需要相符的設定輔助檔案與配接器，詳見[升級指南](https://github.com/anglefeint/astro-theme-anglefeint/blob/main/UPGRADING.md)。
 
 ### Giscus 留言
 

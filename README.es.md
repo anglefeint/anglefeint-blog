@@ -1,6 +1,10 @@
-<h1 align="center">Anglefeint</h1>
-
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [繁體中文](README.zh-Hant.md)
+
+<p align="center">
+  <a href="https://demo.anglefeint.com/es/">
+    <img src="public/images/theme-previews/anglefeint-brand.webp" alt="Anglefeint — Matrix / Cyberpunk / Hacker / AI" width="1600" />
+  </a>
+</p>
 
 <p align="center">Un tema Astro cinematográfico con varias atmósferas para publicación personal.</p>
 
@@ -13,6 +17,10 @@
 </p>
 
 <p align="center">
+  <a href="#installation">Instalación</a> · <a href="#setup">Guía de configuración</a>
+</p>
+
+<p align="center">
   <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.5-BC52EE?logo=astro&logoColor=white" />
   <img alt="Node" src="https://img.shields.io/badge/Node.js-22.12%2B-339933?logo=node.js&logoColor=white" />
   <img alt="Locales" src="https://img.shields.io/badge/i18n-9%20languages-0A7EA4" />
@@ -20,56 +28,42 @@
   <img alt="License" src="https://img.shields.io/badge/License-MIT-2EA043" />
 </p>
 
-## Elegir idiomas
-
-Se activan nueve idiomas: `en`, `ja`, `ko`, `es`, `zh`, `pt-br`, `de`, `ru`, `zh-hant`; inglés sigue siendo el predeterminado. Desactiva cada idioma innecesario con `i18n.locales.<code>.meta.enabled: false` en `src/site.config.ts`. Omitirlo no lo desactiva; el idioma predeterminado permanece activo. `new-post` crea inicialmente nueve plantillas, sin traducir el contenido. Para crear solo español: `npm run new-post -- my-post --locales es`.
-
-## Instalación con plantilla
-
-```bash
-npm create astro@latest -- --template anglefeint/astro-theme-anglefeint#starter
-```
-
-Para pnpm, crea la plantilla con el comando npm anterior (omite la instalación de dependencias), entra en el proyecto generado y ejecuta:
-
-```bash
-pnpm install
-```
-
 ## Requisitos
 
 - Node.js `22.12.0+` (LTS recomendado)
 - Los comandos documentados del starter 0.8.0 pasaron las pruebas en Linux con npm + Node 22 y pnpm 10 + Node 24. No se probaron yarn/bun. Consulta el [registro de validación](https://github.com/anglefeint/astro-theme-anglefeint/blob/main/docs/releases/0.8.0.md).
 
-## Inicio rápido
+<a id="installation"></a>
+
+## Instalación con plantilla
+
+Ejecuta esto una sola vez desde el directorio donde quieres guardar tu blog. Crea `my-blog` y omite la instalación de dependencias; responde las preguntas restantes y continúa abajo. Usa una carpeta nueva; si cambias el nombre, ajusta también `cd`.
 
 ```bash
+npm create astro@latest -- my-blog --template anglefeint/astro-theme-anglefeint#starter --no-install
+```
+
+## Inicio rápido
+
+Elige npm o pnpm para este proyecto. Con npm:
+
+```bash
+cd my-blog
 npm install
 npm run dev
 ```
 
-Build y preview:
+Abre la URL indicada en el terminal. `dev` sigue ejecutándose: antes de los siguientes comandos, detenlo con `Ctrl+C` o abre otro terminal dentro de `my-blog`. Todos los comandos siguientes se ejecutan en esa carpeta.
+
+Con pnpm, usa el mismo comando de creación y sustituye los pasos de instalación e inicio de npm por:
 
 ```bash
-npm run build
-npm run preview
-```
-
-Comandos de calidad:
-
-```bash
-npm run doctor
-npm run check
-```
-
-Con `pnpm`:
-
-```bash
+cd my-blog
 pnpm install
 pnpm dev
-pnpm build
-pnpm preview
 ```
+
+<a id="setup"></a>
 
 ## Primera configuración: identidad del sitio y URL de inicio
 
@@ -100,44 +94,28 @@ Elige un idioma habilitado, como `es`, `en`, `zh`, `ja` o `ko`, para `defaultLoc
 
 Configura `site.url` con la URL real de producción para que los enlaces canonical, los feeds y el sitemap usen el dominio correcto. Si defines `PUBLIC_SITE_URL` en un archivo de entorno o en la configuración de compilación del alojamiento, ese valor tiene prioridad sobre `site.url`; revísalo también. Tras cambiar la configuración, vuelve a compilar y desplegar (`npm run build` o la compilación del alojamiento conectado). Editar solo el archivo local no actualiza el sitio publicado.
 
-## Actualizar tema
+## Elegir idiomas
 
-En proyectos creados desde `#starter`, ejecuta lo siguiente solo si la versión de destino es compatible con tu starter y Astro y no requiere cambios de estructura local:
-
-```bash
-npm update @anglefeint/astro-theme
-npm run doctor
-```
-
-`npm update` respeta el rango de `package.json`: `^0.5.1` no incluye `0.6.0`. Para una actualización compatible fuera del rango, sigue las notas de versión e instala una versión de destino explícita, no `@latest` sin comprobarla. Verifica las versiones con `npm ls @anglefeint/astro-theme astro`.
-
-En el starter actual, `doctor` ya incluye las comprobaciones y la compilación. Cuando termine correctamente, revisa el sitio con `npm run preview`. Solo si informa de diferencias entre los adaptadores generados y las plantillas locales, ejecuta `npm run sync-adapters` y repite `npm run doctor`; esto no descarga plantillas del repositorio original. Los proyectos antiguos pueden tener otros scripts: consulta su `package.json` y la guía de actualización.
-
-Si las notas de versión incluyen cambios del starter, crea la plantilla actual en un directorio nuevo y migra tu contenido y ajustes personales. No sobrescribas los nuevos archivos auxiliares de configuración con los antiguos. `npm update` solo actualiza el paquete; no se garantiza la actualización directa de todos los starters históricos. Consulta la [guía de actualización](https://github.com/anglefeint/astro-theme-anglefeint/blob/main/UPGRADING.md).
-
-Si tu código personalizado aún importa `src/consts` o `@anglefeint/astro-theme/consts`, mígralo a `src/config/site.ts`.
-
-Para migraciones de versiones mayores de Astro, revisa primero la guía oficial:
-
-- https://docs.astro.build/en/guides/upgrade-to/
-- después sigue la lista de verificación de la guía de actualización enlazada arriba.
+Se activan nueve idiomas: `en`, `ja`, `ko`, `es`, `zh`, `pt-br`, `de`, `ru`, `zh-hant`; inglés sigue siendo el predeterminado. Desactiva cada idioma innecesario con `i18n.locales.<code>.meta.enabled: false` en `src/site.config.ts`. Omitirlo no lo desactiva; el idioma predeterminado permanece activo. `new-post` crea inicialmente nueve plantillas, sin traducir el contenido. Para crear solo español: `npm run new-post -- my-post --locales es`.
 
 ## Crear nuevo post
 
-Crea el mismo slug para todos los idiomas habilitados en la configuración:
+Empieza con un artículo en español:
 
 ```bash
-npm run new-post -- my-first-post
+npm run new-post -- my-first-post --locales es
 ```
+
+Edita el título, la descripción y el contenido en `src/content/blog/es/my-first-post.md`. Para crear plantillas con el mismo slug en todos los idiomas activos, omite `--locales`: inicialmente crea nueve archivos, sin traducirlos ni sobrescribir los existentes.
 
 Regla del slug: usa solo minúsculas, números y guiones (ejemplo: `my-first-post`).
 Si existen portadas por defecto en `src/assets/blog/default-covers/`, el script asigna una portada estable por hash de slug (puedes cambiar `heroImage` después).
 Override opcional de idiomas:
 
 ```bash
-npm run new-post -- my-first-post --locales en,fr
+npm run new-post -- my-first-post --locales en,zh
 # o
-ANGLEFEINT_LOCALES=en,fr npm run new-post -- my-first-post
+ANGLEFEINT_LOCALES=en,zh npm run new-post -- my-first-post
 ```
 
 La sintaxis `ANGLEFEINT_LOCALES=...` es para Bash y shells POSIX. En PowerShell, usa el comando con `--locales` de arriba.
@@ -150,6 +128,28 @@ Cómo funciona la URL:
 - No necesitas crear rutas a mano. Astro las genera automáticamente en build.
 
 `--locales` solo crea archivos de artículos; no habilita idiomas. Añade o habilita cada idioma en `src/site.config.ts` para generar sus rutas.
+
+## Comprobar y previsualizar antes de publicar
+
+Después de configurar el sitio y escribir el artículo, detén el servidor de desarrollo y ejecuta:
+
+```bash
+npm run doctor
+npm run preview
+```
+
+`doctor` incluye comprobaciones y compilación; no necesitas repetir `npm run check`. Abre la URL de `preview` y detenlo con `Ctrl+C`. La vista previa es local y no publica el sitio.
+
+Para compilar y previsualizar sin todas las comprobaciones, usa esta alternativa:
+
+```bash
+npm run build
+npm run preview
+```
+
+Con pnpm, ejecuta `pnpm doctor` y luego `pnpm preview`; para solo compilar, usa `pnpm build` y luego `pnpm preview`.
+
+La salida estática está en `dist/`. Configura el alojamiento con `npm run build` y el directorio de salida `dist/`; sigue la [guía de despliegue de Astro](https://docs.astro.build/en/guides/deploy/). Verifica el dominio real, el artículo, el selector de idiomas y la búsqueda tras publicar.
 
 ## Crear nueva página
 
@@ -173,9 +173,31 @@ npm run new-page -- projects --theme hacker
 npm run new-page -- projects --theme matrix
 ```
 
+## Actualizar tema
+
+En proyectos creados desde `#starter`, ejecuta lo siguiente solo si la versión de destino es compatible con tu starter y Astro y no requiere cambios de estructura local:
+
+```bash
+npm update @anglefeint/astro-theme
+npm run doctor
+```
+
+`npm update` respeta el rango de `package.json`: `^0.5.1` no incluye `0.6.0`. Para una actualización compatible fuera del rango, sigue las notas de versión e instala una versión de destino explícita, no `@latest` sin comprobarla. Verifica las versiones con `npm ls @anglefeint/astro-theme astro`.
+
+En el starter actual, `doctor` ya incluye las comprobaciones y la compilación. Cuando termine correctamente, revisa el sitio con `npm run preview`. Solo si informa de diferencias entre los adaptadores generados y las plantillas locales, ejecuta `npm run sync-adapters` y repite `npm run doctor`; esto no descarga plantillas del repositorio original. Los proyectos antiguos pueden tener otros scripts: consulta su `package.json` y la guía de actualización.
+
+Si las notas de versión incluyen cambios del starter, crea la plantilla actual en un directorio nuevo y migra tu contenido y ajustes personales. No sobrescribas los nuevos archivos auxiliares de configuración con los antiguos. `npm update` solo actualiza el paquete; no se garantiza la actualización directa de todos los starters históricos. Consulta la [guía de actualización](https://github.com/anglefeint/astro-theme-anglefeint/blob/main/UPGRADING.md).
+
+Si tu código personalizado aún importa `src/consts` o `@anglefeint/astro-theme/consts`, mígralo a `src/config/site.ts`.
+
+Para migraciones de versiones mayores de Astro, revisa primero la guía oficial:
+
+- https://docs.astro.build/en/guides/upgrade-to/
+- después sigue la lista de verificación de la guía de actualización enlazada arriba.
+
 ## Idiomas
 
-[English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · Español (este archivo) · [한국어](README.ko.md)
+[English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [繁體中文](README.zh-Hant.md)
 
 ## Vista previa
 
@@ -234,6 +256,20 @@ npm run new-page -- projects --theme matrix
    - `theme.effects.enableRedQueen` para activar/desactivar el monitor lateral en posts
    - `theme.comments` para activar y configurar Giscus (IDs base + parámetros de comportamiento)
 3. Reemplaza posts de ejemplo en `src/content/blog/<locale>/`.
+
+### Opcional: Google Analytics 4
+
+Añade o edita esta opción de nivel superior en el objeto `defineThemeConfig({...})` existente de `src/site.config.ts` (junto a `site`, no dentro de `theme`):
+
+```ts
+analytics: {
+  googleAnalyticsId: 'G-XXXXXXXXXX',
+},
+```
+
+Copia el **ID de medición** (`G-...`) de Google Analytics → Administrar → Flujos de datos → tu flujo web. No es el nombre ni el ID numérico de la propiedad. Déjalo vacío para desactivar la medición. Un ID sirve para todos los idiomas y páginas del tema; compara idiomas por la ruta de página. Vuelve a compilar y desplegar, visita el sitio publicado y comprueba el informe En tiempo real de GA4.
+
+El modo de desarrollo y las vistas previas en localhost/bucle local no envían datos. Las vistas previas remotas o por dirección LAN sí miden cuando están configuradas. El starter predeterminado no carga scripts de Google. Evita duplicar la instalación con GTM, Zaraz o código manual. No se incluye un banner ni gestión del consentimiento; si tu sitio los requiere, configúralos antes de activar la medición. Los bloqueadores pueden impedirla. Los proyectos existentes necesitan los archivos auxiliares de configuración y el adaptador correspondientes; consulta la [guía de actualización](https://github.com/anglefeint/astro-theme-anglefeint/blob/main/UPGRADING.md).
 
 ### Opcional: comentarios con Giscus
 
@@ -317,13 +353,11 @@ Disponible desde 0.5.0 con el starter correspondiente; 0.4.0 no incluye esta fun
 
 `npm run build` genera un PNG de 1200×630 con el título, autor y nombre del sitio para artículos sin `ogImage`. No cambia `heroImage`. Usa `ogImage: ./share.png` para una imagen junto al artículo, o `ogImage: /images/share.png` para `public/images/share.png`. También admite HTTPS; la disponibilidad y caché dependen del proveedor. Los archivos locales inexistentes producen un error.
 
+Las tarjetas automáticas usan un fondo incluido de lluvia de código, terminales y redes de neón, con tu propio nombre de sitio, título y autor. El pequeño crédito `Theme by Anglefeint` abajo a la derecha sigue `theme.footer.showCredits` (por defecto `true`); con `false` se ocultan los créditos del pie y de la imagen. Vuelve a compilar y desplegar tras cambiarlo. Los archivos `ogImage` personalizados no se modifican. El fondo funciona sin conexión y no añade JavaScript al navegador.
+
 En `src/site.config.ts`, `theme: { socialImage: { enabled: false } }` desactiva la generación. Las imágenes explícitas siguen teniendo prioridad; los demás artículos usan su portada o la imagen predeterminada. Reconstruye y despliega tras cambiar contenido. Los PNG están en `dist/_social/`; `og:image` del HTML indica la URL exacta. Las plataformas pueden conservar vistas previas en caché.
 
 Las fuentes incluidas cubren los nueve idiomas incluidos, sin API de imágenes ni JS de navegador. Los títulos largos se abrevian solo en la imagen. No se garantizan todos los emojis ni otros sistemas de escritura. Aumentan el tiempo de compilación y el tamaño de instalación, pero las páginas no descargan estas fuentes adicionales.
-
-## Licencia
-
-MIT License. Ver `LICENSE`.
 
 ## Reproductor de música opcional
 
@@ -341,3 +375,7 @@ theme: {
 Cada pista acepta `title`, `src` y un `artist` opcional. También admite URL HTTPS de audio. Una lista vacía oculta el reproductor. En la primera visita, el audio solo se carga al pulsar PLAY. La sesión de la pestaña recuerda pista, posición y volumen. Si se estaba reproduciendo, al navegar, recargar o usar Atrás/Adelante se intenta continuar desde la posición guardada; una pausa manual se mantiene. Puede haber una breve interrupción: no es reproducción continua entre páginas. Si el navegador bloquea la reproducción automática, pulsa PLAY. Si se elimina la pista, no se reproduce otra automáticamente. Sin almacenamiento, la reproducción manual sigue funcionando, pero no se puede reanudar la sesión.
 
 Antes de reproducir, se descarga la pista completa y se convierte en un Blob del navegador, por lo que el salto de posición no depende de HTTP Range. Los archivos grandes o las conexiones lentas aumentan la espera y el uso de memoria. Pausar y continuar reutiliza la pista cargada; cambiar de pista libera la anterior. Al navegar se vuelve a cargar, aunque la caché HTTP del navegador puede ayudar. Los servidores de audio externos deben permitir descargas entre orígenes (CORS); los archivos del mismo sitio en `public/music/` no requieren esa configuración.
+
+## Licencia
+
+MIT License. Ver `LICENSE`.

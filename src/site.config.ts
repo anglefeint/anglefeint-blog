@@ -24,6 +24,7 @@ export { normalizeI18nConfig } from './site.config.runtime.ts';
  * Omitted fields safely fall back to theme defaults.
  */
 export const THEME_CONFIG = defineThemeConfig({
+  analytics: { googleAnalyticsId: 'G-B6XBG6VW39' }, // Optional GA4 Measurement ID (G-...).
   site: {
     title: 'AngleFeint',
     url: 'https://anglefeint.com',

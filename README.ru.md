@@ -1,31 +1,46 @@
-# Anglefeint
-
-Кинематографичная тема Astro для личного блога.
-
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [繁體中文](README.zh-Hant.md)
+
+<p align="center">
+  <a href="https://demo.anglefeint.com/ru/">
+    <img src="public/images/theme-previews/anglefeint-brand.webp" alt="Anglefeint — Matrix / Cyberpunk / Hacker / AI" width="1600" />
+  </a>
+</p>
+
+<p align="center">Кинематографичная тема Astro для личного блога.</p>
 
 [Demo](https://demo.anglefeint.com/ru/) · [GitHub](https://github.com/anglefeint/astro-theme-anglefeint)
 
+<p align="center">
+  <a href="#installation">Установка</a> · <a href="#setup">Настройка</a>
+</p>
+
+<p align="center">
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-7.3.5-BC52EE?logo=astro&logoColor=white" />
+  <img alt="Locales" src="https://img.shields.io/badge/i18n-9%20languages-0A7EA4" />
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-2EA043" />
+</p>
+
+<a id="installation"></a>
+
 ```bash
-npm create astro@latest -- --template anglefeint/astro-theme-anglefeint#starter
+npm create astro@latest -- my-blog --template anglefeint/astro-theme-anglefeint#starter --no-install
 ```
 
-## Языки
-
-Изначально включены девять языков: `en`, `ja`, `ko`, `es`, `zh`, `pt-br`, `de`, `ru`, `zh-hant`. `new-post` создаёт девять файлов, но не переводит текст. Отключайте ненужные языки через `meta.enabled: false` в `src/site.config.ts`; пропуска записи недостаточно. Основной язык остаётся активным. Только русский: `npm run new-post -- my-post --locales ru`.
+<a id="setup"></a>
 
 ## Руководство 1: Настройка блога
 
 ### Установка и локальный запуск
 
-Нужен Node.js 22.12.0 или новее. В мастере выберите папку, например my-blog, и укажите её в cd. Пропустите npm install, если зависимости уже установлены.
+Нужен Node.js 22.12.0 или новее. Команда выше один раз создаёт новую папку `my-blog` и пропускает установку зависимостей. Ответьте на остальные вопросы и продолжайте ниже; если изменили имя папки, измените и `cd`.
 
 ```bash
-npm create astro@latest -- --template anglefeint/astro-theme-anglefeint#starter
 cd my-blog
 npm install
 npm run dev
 ```
+
+Сервер разработки продолжает работать. Перед следующими командами остановите его через `Ctrl+C` или откройте второй терминал в `my-blog`. Все дальнейшие команды выполняются в папке проекта. Повторно создавать проект не нужно.
 
 Откройте адрес из терминала. Для pnpm используйте ту же команду создания, пропустите установку в мастере, затем выполните pnpm install и pnpm dev.
 
@@ -75,11 +90,10 @@ i18n: {
 Для каждого языка starter содержит приветствие и три руководства. Сохраните нужное и удалите лишние примеры; не удаляйте используемые изображения.
 
 ```bash
-npm run new-post -- my-first-post
-# --locales en,pt-br
+npm run new-post -- my-first-post --locales ru
 ```
 
-Команда создаёт шаблон для каждого активного языка, изначально девять. Она не переводит текст и не перезаписывает файлы. Измените заголовок, описание и текст в src/content/blog/ru/my-first-post.md.
+Начните с одной статьи на русском. Без `--locales ru` команда создаёт заготовки для всех включённых языков (изначально девять), без автоматического перевода. Существующие файлы сохраняются. Измените заголовок, описание и текст в src/content/blog/ru/my-first-post.md.
 
 ### Проверка и публикация
 
@@ -96,13 +110,16 @@ doctor выполняет проверки и сборку. preview показы
 
 - [Руководство 2: Статьи и организация контента](https://demo.anglefeint.com/ru/blog/starter-guide-2-languages-and-routing/)
 
+## Языки
+
+Изначально включены девять языков: `en`, `ja`, `ko`, `es`, `zh`, `pt-br`, `de`, `ru`, `zh-hant`. `new-post` создаёт девять файлов, но не переводит текст. Отключайте ненужные языки через `meta.enabled: false` в `src/site.config.ts`; пропуска записи недостаточно. Основной язык остаётся активным. Только русский: `npm run new-post -- my-post --locales ru`.
+
 ## Руководство 2: Статьи и организация контента
 
 ### Создать статью
 
 ```bash
-npm run new-post -- my-first-post
-# --locales en,pt-br
+npm run new-post -- my-first-post --locales ru
 ```
 
 Только русский: npm run new-post -- my-first-post --locales ru. Slug содержит строчные латинские буквы, цифры и дефисы. src/content/blog/ru/my-first-post.md создаёт /ru/blog/my-first-post/. Существующие файлы сохраняются. --locales создаёт файлы, но не включает язык.
@@ -144,6 +161,8 @@ tags: ['astro', 'notes'] создаёт страницы в /ru/tags/. Реги�
 
 Без ogImage сборка создаёт PNG 1200×630 с заголовком, автором и названием сайта. heroImage остаётся отдельной обложкой. Свой файл: ogImage: ./share.png либо /images/share.png; HTTPS также поддерживается. Отсутствующий локальный файл вызывает ошибку; внешний зависит от сервиса.
 
+Автоматические карточки используют встроенный фон с дождём кода, терминалами и неоновой сетью, сохраняя ваше название сайта, заголовок и автора. Небольшая подпись `Theme by Anglefeint` справа внизу зависит от `theme.footer.showCredits` (по умолчанию `true`); `false` скрывает подписи и в подвале, и на изображении. После изменения пересоберите и опубликуйте сайт. Собственные файлы `ogImage` не изменяются. Фон работает офлайн и не добавляет JavaScript в браузер.
+
 Явный ogImage имеет приоритет. theme.socialImage.enabled: false отключает только генерацию; иначе используется обложка или стандартное изображение. Проверяйте og:image в HTML и dist/\_social/. Платформы могут кешировать старые превью. Не гарантируются все эмодзи и системы письма.
 
 ### Отдельные страницы
@@ -167,6 +186,20 @@ theme: {
 Трек содержит title, src и необязательный artist. Без треков плеер скрыт. Первый запуск требует клика. Сессия сохраняет трек, позицию и громкость; продолжение зависит от браузера, бесшовность не гарантируется. После последнего трека список начинается заново.
 
 Перед воспроизведением скачивается весь файл. Большие файлы увеличивают ожидание и расход памяти. Для внешних источников нужен CORS; локальные файлы этого не требуют. enabled: false отключает плеер.
+
+### Необязательно: Google Analytics 4
+
+Добавьте или измените этот параметр верхнего уровня в существующем объекте `defineThemeConfig({...})` файла `src/site.config.ts` (рядом с `site`, не внутри `theme`):
+
+```ts
+analytics: {
+  googleAnalyticsId: 'G-XXXXXXXXXX',
+},
+```
+
+Скопируйте **идентификатор потока данных** (`G-...`) из Google Analytics → Администратор → Потоки данных → веб-поток. Это не название ресурса и не его числовой ID. Пустое значение отключает сбор. Один ID используется для всех языков и страниц темы; языки можно сравнивать по пути страницы. Повторно соберите и опубликуйте сайт, откройте его и проверьте отчёт GA4 в реальном времени.
+
+Режим разработки и предпросмотр через localhost/loopback не отправляют данные. Настроенные удалённые предпросмотры и адреса локальной сети учитывают посещения. По умолчанию starter не загружает скрипт Google. Не дублируйте установку через GTM, Zaraz или вручную. Баннер и управление согласием не включены; при необходимости настройте их до включения сбора. Блокировщики могут мешать сбору данных. Существующим проектам нужны соответствующие вспомогательные файлы конфигурации и адаптер; см. [руководство по обновлению](https://github.com/anglefeint/astro-theme-anglefeint/blob/main/UPGRADING.md).
 
 ### Комментарии Giscus
 
