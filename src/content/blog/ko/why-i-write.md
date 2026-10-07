@@ -1,7 +1,7 @@
 ---
 title: '나는 왜 쓰는가'
 description: '검열, 사라져 가는 간체 중국어 인터넷의 기억, 그리고 남아 있는 것을 보존하기 위해 내가 글을 쓰는 이유.'
-pubDate: '2026-10-08'
+pubDate: '2026-10-07'
 author: 'AngleFeint'
 tags: ['writing', 'language', 'censorship', 'memory', 'freedom']
 heroImage: '../../../assets/blog/default-covers/hacker-01.webp'

@@ -1,7 +1,7 @@
 ---
 title: 'Por qué escribo'
 description: 'Sobre la censura, la memoria que desaparece de la Internet en chino simplificado y por qué escribo para preservar lo que queda.'
-pubDate: '2026-10-08'
+pubDate: '2026-10-07'
 author: 'AngleFeint'
 tags: ['writing', 'language', 'censorship', 'memory', 'freedom']
 heroImage: '../../../assets/blog/default-covers/hacker-01.webp'

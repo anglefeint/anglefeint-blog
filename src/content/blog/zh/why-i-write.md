@@ -1,7 +1,7 @@
 ---
 title: '我为什么写作'
 description: '关于审查、简体中文互联网正在消逝的记忆，以及我为何写作，试图保存那些尚未消失的东西。'
-pubDate: '2026-10-08'
+pubDate: '2026-10-07'
 author: 'AngleFeint'
 tags: ['writing', 'language', 'censorship', 'memory', 'freedom']
 heroImage: '../../../assets/blog/default-covers/hacker-01.webp'

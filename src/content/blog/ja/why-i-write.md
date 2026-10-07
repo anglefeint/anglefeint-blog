@@ -1,7 +1,7 @@
 ---
 title: 'なぜ私は書くのか'
 description: '検閲、失われゆく簡体字中国語のインターネットの記憶、そして残されたものを守るために私が書く理由。'
-pubDate: '2026-10-08'
+pubDate: '2026-10-07'
 author: 'AngleFeint'
 tags: ['writing', 'language', 'censorship', 'memory', 'freedom']
 heroImage: '../../../assets/blog/default-covers/hacker-01.webp'

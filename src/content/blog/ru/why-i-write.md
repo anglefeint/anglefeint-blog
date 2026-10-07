@@ -1,7 +1,7 @@
 ---
 title: 'Почему я пишу'
 description: 'О цензуре, исчезающей памяти интернета на упрощённом китайском и о том, почему я пишу, чтобы сохранить то, что ещё осталось.'
-pubDate: '2026-10-08'
+pubDate: '2026-10-07'
 author: 'AngleFeint'
 tags: ['writing', 'language', 'censorship', 'memory', 'freedom']
 heroImage: '../../../assets/blog/default-covers/hacker-01.webp'

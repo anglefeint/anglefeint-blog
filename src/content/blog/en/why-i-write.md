@@ -1,7 +1,7 @@
 ---
 title: 'Why I Write'
 description: 'On censorship, the disappearing memory of the Simplified Chinese Internet, and why I write to preserve what remains.'
-pubDate: '2026-10-08'
+pubDate: '2026-10-07'
 author: 'AngleFeint'
 tags: ['writing', 'language', 'censorship', 'memory', 'freedom']
 heroImage: '../../../assets/blog/default-covers/hacker-01.webp'

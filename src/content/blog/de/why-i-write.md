@@ -1,7 +1,7 @@
 ---
 title: 'Warum ich schreibe'
 description: 'Über Zensur, das schwindende Gedächtnis des Internets in vereinfachtem Chinesisch und warum ich schreibe, um das Verbliebene zu bewahren.'
-pubDate: '2026-10-08'
+pubDate: '2026-10-07'
 author: 'AngleFeint'
 tags: ['writing', 'language', 'censorship', 'memory', 'freedom']
 heroImage: '../../../assets/blog/default-covers/hacker-01.webp'
