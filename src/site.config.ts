@@ -33,7 +33,7 @@ export const THEME_CONFIG = defineThemeConfig({
   social: {
     links: [
       { href: 'https://x.com/anglefeint', label: 'X', icon: 'twitter' },
-      { href: 'https://mastodon.social/@anglefeint', label: 'Mastodon', icon: 'mastodon' },
+      { href: 'https://mastodon.social/@anglefeint', label: 'Mastodon', icon: 'mastodon', rel: 'me' },
       { href: 'https://github.com/anglefeint', label: 'GitHub', icon: 'github' },
     ],
   },
