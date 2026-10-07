@@ -55,7 +55,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "Ship, observe, iterate.",
               "Question defaults."
             ],
-            "now": "Building a startup.\n\nExploring software, systems, AI, and whatever seems interesting enough to deserve being built.\n\nAngleFeint is where some of those experiments end up.",
+            "now": "Building a startup.\n\nExploring software, systems, AI, and whatever seems interesting enough to deserve being built.\n\nAngleFeint is my personal corner of the internet — a place for writing, ideas, and whatever I feel like making public.",
             "contactLead": "If you build interesting things, we’ll probably have something to talk about.",
             "signature": "Look deeper."
           },
@@ -82,7 +82,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "リリースし、観察し、改善を重ねる。",
               "デフォルトを疑う。"
             ],
-            "now": "スタートアップを立ち上げています。\n\nソフトウェア、システム、AI、そして作る価値があるほど面白いものを探究しています。\n\nその実験の一部が、AngleFeint にたどり着きます。",
+            "now": "スタートアップを立ち上げています。\n\nソフトウェア、システム、AI、そして作る価値があるほど面白いものを探究しています。\n\nAngleFeint は、インターネットの片隅にある私の個人的な場所。文章やアイデア、そして公開したいと思ったものを自由に置いています。",
             "contactLead": "面白いものを作っているなら、きっと話が合うはずです。",
             "signature": "もっと深く見よう。"
           },
@@ -109,7 +109,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "출시하고, 관찰하고, 개선한다.",
               "기본값에 의문을 갖는다."
             ],
-            "now": "스타트업을 만들고 있습니다.\n\n소프트웨어, 시스템, AI, 그리고 직접 만들 가치가 있을 만큼 흥미로운 것들을 탐구합니다.\n\n그 실험 중 일부가 AngleFeint에 자리 잡습니다.",
+            "now": "스타트업을 만들고 있습니다.\n\n소프트웨어, 시스템, AI, 그리고 직접 만들 가치가 있을 만큼 흥미로운 것들을 탐구합니다.\n\nAngleFeint는 인터넷 한편에 마련한 저만의 공간입니다. 글과 아이디어, 그리고 공개하고 싶은 것은 무엇이든 담아 둡니다.",
             "contactLead": "흥미로운 것을 만들고 있다면, 우리는 아마 나눌 이야기가 있을 겁니다.",
             "signature": "더 깊이 들여다보세요."
           },
@@ -136,7 +136,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "Lanzar, observar, iterar.",
               "Cuestionar lo predeterminado."
             ],
-            "now": "Creando una startup.\n\nExplorando software, sistemas, IA y cualquier cosa lo bastante interesante como para merecer ser construida.\n\nAlgunos de esos experimentos acaban en AngleFeint.",
+            "now": "Creando una startup.\n\nExplorando software, sistemas, IA y cualquier cosa lo bastante interesante como para merecer ser construida.\n\nAngleFeint es mi rincón personal de internet: un espacio para escribir, compartir ideas y publicar lo que me apetezca.",
             "contactLead": "Si construyes cosas interesantes, probablemente tendremos algo de qué hablar.",
             "signature": "Mira más allá."
           },
@@ -163,7 +163,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "交付、观察、迭代。",
               "质疑默认设定。"
             ],
-            "now": "正在创业。\n\n探索软件、系统、AI，以及任何有趣到值得动手做出来的东西。\n\n其中一些实验，最终会出现在 AngleFeint。",
+            "now": "正在创业。\n\n探索软件、系统、AI，以及任何有趣到值得动手做出来的东西。\n\nAngleFeint 是我在互联网一隅的个人空间，放些文字、想法，以及任何我想公开分享的东西。",
             "contactLead": "如果你也在创造有趣的东西，我们大概会有不少可聊的。",
             "signature": "看得更深。"
           },
@@ -190,7 +190,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "Entregar, observar, iterar.",
               "Questionar os padrões."
             ],
-            "now": "Construindo uma startup.\n\nExplorando software, sistemas, IA e qualquer coisa interessante o bastante para merecer ser construída.\n\nAlguns desses experimentos acabam no AngleFeint.",
+            "now": "Construindo uma startup.\n\nExplorando software, sistemas, IA e qualquer coisa interessante o bastante para merecer ser construída.\n\nAngleFeint é meu cantinho pessoal na internet: um espaço para textos, ideias e tudo o que eu tiver vontade de tornar público.",
             "contactLead": "Se você constrói coisas interessantes, provavelmente teremos o que conversar.",
             "signature": "Olhe mais fundo."
           },
@@ -217,7 +217,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "Ausliefern, beobachten, iterieren.",
               "Voreinstellungen hinterfragen."
             ],
-            "now": "Ich baue ein Startup auf.\n\nIch erkunde Software, Systeme, KI und alles, was interessant genug erscheint, um gebaut zu werden.\n\nEinige dieser Experimente landen auf AngleFeint.",
+            "now": "Ich baue ein Startup auf.\n\nIch erkunde Software, Systeme, KI und alles, was interessant genug erscheint, um gebaut zu werden.\n\nAngleFeint ist meine persönliche Ecke im Internet: ein Ort für Texte, Ideen und alles, was ich öffentlich teilen möchte.",
             "contactLead": "Wenn du interessante Dinge baust, haben wir wahrscheinlich etwas zu besprechen.",
             "signature": "Schau tiefer."
           },
@@ -244,7 +244,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "Выпускать, наблюдать, совершенствовать.",
               "Ставить под сомнение настройки по умолчанию."
             ],
-            "now": "Строю стартап.\n\nИсследую программное обеспечение, системы, ИИ и всё, что кажется достаточно интересным, чтобы это стоило создать.\n\nНекоторые из этих экспериментов оказываются на AngleFeint.",
+            "now": "Строю стартап.\n\nИсследую программное обеспечение, системы, ИИ и всё, что кажется достаточно интересным, чтобы это стоило создать.\n\nAngleFeint — мой личный уголок интернета: место для текстов, идей и всего, чем мне захочется поделиться публично.",
             "contactLead": "Если вы создаёте интересные вещи, нам наверняка будет о чём поговорить.",
             "signature": "Смотри глубже."
           },
@@ -271,7 +271,7 @@ export const THEME_CONFIG = defineThemeConfig({
               "交付、觀察、迭代。",
               "質疑預設。"
             ],
-            "now": "正在創業。\n\n探索軟體、系統、AI，以及任何有趣到值得動手做出來的東西。\n\n其中一些實驗，最終會出現在 AngleFeint。",
+            "now": "正在創業。\n\n探索軟體、系統、AI，以及任何有趣到值得動手做出來的東西。\n\nAngleFeint 是我在網際網路一隅的個人空間，放些文字、想法，以及任何我想公開分享的東西。",
             "contactLead": "如果你也在創造有趣的東西，我們大概會有不少可聊的。",
             "signature": "看得更深。"
           },
