@@ -1,3 +1,7 @@
+## Writing
+
+Before creating, translating, editing, or publishing blog posts, read and follow [WRITING_WORKFLOW.md](./WRITING_WORKFLOW.md).
+
 ## Development
 
 When starting the dev server, use background mode:
