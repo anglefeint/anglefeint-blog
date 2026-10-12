@@ -1,26 +1,14 @@
-## Writing
+---
+doc_id: starter_claude_entry
+doc_role: adapter-entry
+doc_purpose: Claude Code entry for the personal blog instructions.
+doc_scope: [agent-guidance]
+update_triggers: [workflow-change]
+depends_on: [AGENTS.md]
+---
 
-Before creating, translating, editing, or publishing blog posts, read and follow [WRITING_WORKFLOW.md](./WRITING_WORKFLOW.md).
+# Blog instructions
 
-## Development
+@AGENTS.md
 
-When starting the dev server, use background mode:
-
-```
-astro dev --background
-```
-
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
-
-## Documentation
-
-Full documentation: https://docs.astro.build
-
-Consult these guides before working on related tasks:
-
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+Use the shared blog instructions above and the owner's requests. Keep project-specific guidance in `AGENTS.md` so other AI assistants use the same workflow.
