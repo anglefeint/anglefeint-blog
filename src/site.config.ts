@@ -68,7 +68,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: 'Exploring technology, history, places, and ideas — and leaving a record along the way.' },
+        site: { homeTitle: 'AngleFeint', hero: 'Exploring technology, history, places, and ideas — and leaving a record along the way.' },
       },
       ja: {
         about: {
@@ -95,7 +95,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: '技術、歴史、さまざまな場所や思想を探究し、その道のりを記録していく。' },
+        site: { homeTitle: 'アングルフェイント', hero: '技術、歴史、さまざまな場所や思想を探究し、その道のりを記録していく。' },
       },
       ko: {
         about: {
@@ -122,7 +122,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: '기술, 역사, 장소와 생각을 탐구하며 그 여정을 기록합니다.' },
+        site: { homeTitle: '앵글 페인트', hero: '기술, 역사, 장소와 생각을 탐구하며 그 여정을 기록합니다.' },
       },
       es: {
         about: {
@@ -149,7 +149,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: 'Explorando la tecnología, la historia, los lugares y las ideas, y dejando un registro por el camino.' },
+        site: { homeTitle: 'Finta Angular', hero: 'Explorando la tecnología, la historia, los lugares y las ideas, y dejando un registro por el camino.' },
       },
       zh: {
         about: {
@@ -176,7 +176,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: '探索技术、历史、地方与思想，也为沿途的见闻留下记录。' },
+        site: { homeTitle: '角度佯攻', hero: '探索技术、历史、地方与思想，也为沿途的见闻留下记录。' },
       },
       'pt-br': {
         about: {
@@ -203,7 +203,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: 'Explorando tecnologia, história, lugares e ideias, e deixando um registro pelo caminho.' },
+        site: { homeTitle: 'Finta Angular', hero: 'Explorando tecnologia, história, lugares e ideias, e deixando um registro pelo caminho.' },
       },
       de: {
         about: {
@@ -230,7 +230,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: 'Technologie, Geschichte, Orte und Ideen erkunden und unterwegs festhalten, was ich entdecke.' },
+        site: { homeTitle: 'Winkelfinte', hero: 'Technologie, Geschichte, Orte und Ideen erkunden und unterwegs festhalten, was ich entdecke.' },
       },
       ru: {
         about: {
@@ -257,7 +257,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: 'Исследуя технологии, историю, места и идеи и сохраняя заметки о пройденном пути.' },
+        site: { homeTitle: 'Угловой финт', hero: 'Исследуя технологии, историю, места и идеи и сохраняя заметки о пройденном пути.' },
       },
       'zh-hant': {
         about: {
@@ -284,7 +284,7 @@ export const THEME_CONFIG = defineThemeConfig({
             "contactConnectLead": " "
           }
         },
-        site: { hero: '探索技術、歷史、地方與思想，也為沿途的見聞留下記錄。' },
+        site: { homeTitle: '角度佯攻', hero: '探索技術、歷史、地方與思想，也為沿途的見聞留下記錄。' },
       },
     },
   },
