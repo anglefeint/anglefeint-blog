@@ -44,6 +44,7 @@ export const THEME_CONFIG = defineThemeConfig({
     },
     locales: {
       en: {
+        messages: { home: { transmission: 'You found the door.' } },
         about: {
           "sections": {
             "who": "Founder, builder, and developer.\n\nI spent more than a decade at some of Asia’s largest technology companies, working on products and systems at massive scale.\n\nOver the years, I moved from hands-on engineering into senior technical and organizational leadership, including leading cross-functional teams of nearly a hundred people across engineering, product, operations, and quality.\n\nLater, I worked at a globally leading technology company at director level, collaborating across countries and distributed teams.\n\nNow I’m building my own startup internationally.",
@@ -71,6 +72,7 @@ export const THEME_CONFIG = defineThemeConfig({
         site: { homeTitle: 'AngleFeint', hero: 'Exploring technology, history, places, and ideas — and leaving a record along the way.' },
       },
       ja: {
+        messages: { home: { transmission: '扉を見つけたね。' } },
         about: {
           "sections": {
             "who": "創業者、ビルダー、そして開発者。\n\nアジア最大級のテクノロジー企業で10年以上にわたり、極めて大規模なプロダクトとシステムに携わってきました。\n\n現場のエンジニアリングから、技術と組織の上級リーダーシップへと役割を広げ、エンジニアリング、プロダクト、運用、品質を横断する100人近いチームを率いた経験もあります。\n\nその後、世界をリードするテクノロジー企業でディレクターレベルの役職を務め、国境を越えた分散型チームと協働しました。\n\n現在は、国際的に自分のスタートアップを立ち上げています。",
@@ -98,6 +100,7 @@ export const THEME_CONFIG = defineThemeConfig({
         site: { homeTitle: 'アングルフェイント', hero: '技術、歴史、さまざまな場所や思想を探究し、その道のりを記録していく。' },
       },
       ko: {
+        messages: { home: { transmission: '문을 찾았네요.' } },
         about: {
           "sections": {
             "who": "창업자이자 빌더, 그리고 개발자입니다.\n\n아시아 최대 규모의 기술 기업들에서 10년 넘게 일하며 초대규모 제품과 시스템을 다뤘습니다.\n\n현장에서 직접 개발하던 역할에서 고위 기술 및 조직 리더십으로 영역을 넓혔고, 엔지니어링, 제품, 운영, 품질 분야를 아우르는 약 100명 규모의 다기능 팀을 이끌기도 했습니다.\n\n이후 세계적인 선도 기술 기업에서 디렉터급 직책을 맡아 여러 국가의 분산된 팀들과 협업했습니다.\n\n지금은 국제 무대에서 제 스타트업을 만들고 있습니다.",
@@ -125,6 +128,7 @@ export const THEME_CONFIG = defineThemeConfig({
         site: { homeTitle: '앵글 페인트', hero: '기술, 역사, 장소와 생각을 탐구하며 그 여정을 기록합니다.' },
       },
       es: {
+        messages: { home: { transmission: 'Encontraste la puerta.' } },
         about: {
           "sections": {
             "who": "Fundador, creador y desarrollador.\n\nPasé más de una década en algunas de las mayores empresas tecnológicas de Asia, trabajando en productos y sistemas a escala masiva.\n\nCon los años, pasé de la ingeniería práctica a puestos de alta responsabilidad técnica y organizativa, llegando a liderar equipos multidisciplinares de casi cien personas en ingeniería, producto, operaciones y calidad.\n\nMás adelante, trabajé en una empresa tecnológica líder mundial en un puesto de nivel director, colaborando entre países y con equipos distribuidos.\n\nAhora estoy creando mi propia startup a escala internacional.",
@@ -152,6 +156,7 @@ export const THEME_CONFIG = defineThemeConfig({
         site: { homeTitle: 'Finta Angular', hero: 'Explorando la tecnología, la historia, los lugares y las ideas, y dejando un registro por el camino.' },
       },
       zh: {
+        messages: { home: { transmission: '被你找到门了。' } },
         about: {
           "sections": {
             "who": "创始人、创造者、开发者。\n\n我曾在亚洲一些规模最大的科技公司工作十余年，参与超大规模产品与系统的开发。\n\n这些年来，我从一线工程实践走向高级技术与组织管理，曾领导近百人的跨职能团队，涵盖工程、产品、运营与质量。\n\n后来，我在一家全球领先的科技公司担任总监级职务，与跨国、分布式团队协作。\n\n如今，我正在国际舞台上创建自己的创业公司。",
@@ -179,6 +184,7 @@ export const THEME_CONFIG = defineThemeConfig({
         site: { homeTitle: '角度佯攻', hero: '探索技术、历史、地方与思想，也为沿途的见闻留下记录。' },
       },
       'pt-br': {
+        messages: { home: { transmission: 'Você encontrou a porta.' } },
         about: {
           "sections": {
             "who": "Fundador, criador e desenvolvedor.\n\nPassei mais de uma década em algumas das maiores empresas de tecnologia da Ásia, trabalhando em produtos e sistemas de escala massiva.\n\nAo longo dos anos, passei da engenharia prática para posições de liderança técnica e organizacional sênior, inclusive liderando equipes multifuncionais de quase cem pessoas nas áreas de engenharia, produto, operações e qualidade.\n\nMais tarde, trabalhei em uma empresa de tecnologia líder global em um cargo de nível de diretor, colaborando entre países e com equipes distribuídas.\n\nAgora estou construindo minha própria startup internacionalmente.",
@@ -206,6 +212,7 @@ export const THEME_CONFIG = defineThemeConfig({
         site: { homeTitle: 'Finta Angular', hero: 'Explorando tecnologia, história, lugares e ideias, e deixando um registro pelo caminho.' },
       },
       de: {
+        messages: { home: { transmission: 'Du hast die Tür gefunden.' } },
         about: {
           "sections": {
             "who": "Gründer, Gestalter und Entwickler.\n\nIch habe mehr als ein Jahrzehnt bei einigen der größten Technologieunternehmen Asiens an Produkten und Systemen in enormem Maßstab gearbeitet.\n\nIm Laufe der Jahre entwickelte sich meine Arbeit von praktischer Softwareentwicklung hin zu leitenden technischen und organisatorischen Aufgaben. Dabei führte ich unter anderem funktionsübergreifende Teams von fast hundert Menschen aus Entwicklung, Produkt, Betrieb und Qualität.\n\nSpäter arbeitete ich bei einem weltweit führenden Technologieunternehmen auf Director-Ebene, länderübergreifend und mit verteilten Teams.\n\nHeute baue ich international mein eigenes Startup auf.",
@@ -233,6 +240,7 @@ export const THEME_CONFIG = defineThemeConfig({
         site: { homeTitle: 'Winkelfinte', hero: 'Technologie, Geschichte, Orte und Ideen erkunden und unterwegs festhalten, was ich entdecke.' },
       },
       ru: {
+        messages: { home: { transmission: 'Вот и нашлась дверь.' } },
         about: {
           "sections": {
             "who": "Основатель, создатель и разработчик.\n\nБолее десяти лет я работал в нескольких крупнейших технологических компаниях Азии над продуктами и системами огромного масштаба.\n\nСо временем я перешёл от непосредственной инженерной работы к руководящим техническим и организационным ролям, в том числе возглавлял кросс-функциональные команды почти из ста человек, объединявшие разработку, продукт, операционную деятельность и качество.\n\nПозже я работал на директорском уровне в одной из ведущих мировых технологических компаний, сотрудничая с распределёнными командами в разных странах.\n\nСейчас я строю собственный стартап на международном уровне.",
@@ -260,6 +268,7 @@ export const THEME_CONFIG = defineThemeConfig({
         site: { homeTitle: 'Угловой финт', hero: 'Исследуя технологии, историю, места и идеи и сохраняя заметки о пройденном пути.' },
       },
       'zh-hant': {
+        messages: { home: { transmission: '被你找到門了。' } },
         about: {
           "sections": {
             "who": "創辦人、創造者、開發者。\n\n我曾在亞洲一些規模最大的科技公司工作十餘年，參與超大規模產品與系統的開發。\n\n這些年來，我從第一線工程實務走向高階技術與組織管理，曾領導近百人的跨職能團隊，涵蓋工程、產品、營運與品質。\n\n後來，我在一家全球領先的科技公司擔任總監級職務，與跨國、分散式團隊協作。\n\n如今，我正在國際舞台上建立自己的新創公司。",
