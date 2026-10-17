@@ -17,9 +17,9 @@ This is a personal blog built from the Anglefeint starter. Help its owner config
 
 Read [README.md](README.md) or the owner's language version, then inspect `package.json` and the existing `src/site.config.ts`. Read only the tutorial needed for the task:
 
-- [Setup and deployment](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.17.0/src/content/blog/en/starter-guide-1-configure-your-site.md)
-- [Writing and content](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.17.0/src/content/blog/en/starter-guide-2-languages-and-routing.md)
-- [Optional features](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.17.0/src/content/blog/en/starter-guide-3-comments-about-and-theme-toggles.md)
+- [Setup and deployment](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.18.0/src/content/blog/en/starter-guide-1-configure-your-site.md)
+- [Writing and content](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.18.0/src/content/blog/en/starter-guide-2-languages-and-routing.md)
+- [Optional features](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.18.0/src/content/blog/en/starter-guide-3-comments-about-and-theme-toggles.md)
 
 Starter tutorials are intentionally not published as articles on this blog. The links above reference the matching upstream release. Actual local configuration and code determine behavior; examples should be merged into the existing configuration.
 
