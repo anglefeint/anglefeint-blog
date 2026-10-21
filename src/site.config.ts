@@ -322,6 +322,7 @@ export const THEME_CONFIG = defineThemeConfig({
         { title: 'Kage - Stage 1', src: '/music/kage-stage-1.mp3' },
         { title: 'The Last Meal', src: '/music/the-last-meal.mp3' },
         { title: 'Sparkle', src: '/music/sparkle.mp3' },
+        { title: 'Resident Evil Main Title Theme (DnB Mix)', src: '/music/resident-evil-main-title-theme-dnb-mix.mp3' },
       ],
     },
   },
