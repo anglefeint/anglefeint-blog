@@ -4,12 +4,14 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import search from '@anglefeint/astro-theme/search';
 import socialImage from '@anglefeint/astro-theme/social-image';
+import machineReadable from '@anglefeint/astro-theme/machine-readable';
 import markdown from '@anglefeint/astro-theme/markdown';
+import { THEME_CONFIG } from './src/site.config';
 import { THEME } from './src/config/theme';
 import { defineConfig } from 'astro/config';
 import { URL, fileURLToPath } from 'node:url';
 import { resolveThemeDefaultI18nEntry } from './scripts/resolve-theme-default-i18n-entry.mjs';
-import { SITE_URL } from './src/config/site';
+import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from './src/config/site';
 import { resolveSiteUrl } from './scripts/resolve-site-url.mjs';
 import { DEFAULT_LOCALE, DEFAULT_LOCALE_PREFIX_MODE } from './src/i18n/config';
 
@@ -34,6 +36,12 @@ export default defineConfig({
   integrations: [
     mdx(),
     socialImage(),
+    machineReadable({
+      title: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      aiReadableContent: THEME_CONFIG.aiReadableContent,
+      locales: THEME_CONFIG.i18n.locales,
+    }),
     search({ enabled: THEME.SEARCH.ENABLED }),
     sitemap({
       filter: (page) => {

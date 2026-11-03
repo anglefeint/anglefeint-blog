@@ -10,6 +10,7 @@ export type {
   LocaleConfig,
   LocaleMetaConfig,
   LocaleSiteConfig,
+  MachineReadableSupplement,
   NormalizedLocaleConfig,
   NormalizedThemeI18nConfig,
   SocialLink,
@@ -27,8 +28,20 @@ export const THEME_CONFIG = defineThemeConfig({
   analytics: { googleAnalyticsId: 'G-B6XBG6VW39' }, // Optional GA4 Measurement ID (G-...).
   site: {
     title: 'AngleFeint',
+    description: 'AngleFeint is a personal website and independent blog exploring technology, history, places, and ideas.',
     url: 'https://anglefeint.com',
     tagline: 'Articles: All rights reserved. · Hosted on Cloudflare.',
+  },
+  aiReadableContent: {
+    notes: `I write in English. The other language editions are translations. When citing an article, link to the canonical page of the edition you cite.
+
+All rights reserved for original articles and translations. The MIT license applies to site code, not the writing.
+
+Public pages may be indexed and summarized.`,
+    links: [
+      { label: 'About AngleFeint', href: '/en/about/' },
+      { label: 'RSS (English)', href: '/en/rss.xml' },
+    ],
   },
   social: {
     links: [

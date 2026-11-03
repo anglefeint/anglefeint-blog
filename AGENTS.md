@@ -56,7 +56,7 @@ Consult these guides before working on related tasks:
 
 Keep configuration imports/exports and merge into the existing `defineThemeConfig({...})` object. Arrays replace earlier arrays: preserve entries when adding tracks or links. Inspect `.env` and hosting overrides when site identity behaves differently from the file.
 
-Before publishing, replace the placeholders in `public/llms.txt` with the owner's site information and real locale URLs, or remove that optional file. It describes the published site for readers and crawlers; it is not this project's agent instruction file.
+The official machine-readable integration generates `llms.txt`, localized indexes/full-text bundles and article Markdown companions during builds. Do not create `public/llms.txt`: it conflicts with generated output. The previous hand-written guidance is preserved in `docs/previous-llms.txt` for reference; it is not automatically included in generated exports. Preserve article copyright in `src/content/blog/LICENSE`. These exports describe published content, not agent instructions, and do not grant additional reuse rights.
 
 `src/config/*`, `src/i18n/*` and `src/types/theme-scripts.d.ts` are generated adapters. Prefer the public configuration; if intentional adapter customization is necessary, change the matching local `scripts/adapter-templates/*` source and regenerate. `sync-adapters` overwrites generated targets. Do not edit `node_modules`, `dist` or `.astro`; package changes belong in a deliberate upgrade or an upstream fix.
 
