@@ -28,6 +28,7 @@ export const THEME_CONFIG = defineThemeConfig({
   analytics: { googleAnalyticsId: 'G-B6XBG6VW39' }, // Optional GA4 Measurement ID (G-...).
   site: {
     title: 'AngleFeint',
+    author: 'AngleFeint',
     description: 'AngleFeint is a personal website and independent blog exploring technology, history, places, and ideas.',
     url: 'https://anglefeint.com',
     tagline: 'Articles: All rights reserved. · Hosted on Cloudflare.',
