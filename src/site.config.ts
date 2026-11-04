@@ -311,6 +311,7 @@ Public pages may be indexed and summarized.`,
     },
   },
   theme: {
+    blogPageSize: 10,
     comments: {
       enabled: true,
       repo: 'anglefeint/anglefeint-blog',
