@@ -33,11 +33,7 @@ export const THEME_CONFIG = defineThemeConfig({
     tagline: 'Articles: All rights reserved. · Hosted on Cloudflare.',
   },
   aiReadableContent: {
-    notes: `I write in English. The other language editions are translations. When citing an article, link to the canonical page of the edition you cite.
-
-All rights reserved for original articles and translations. The MIT license applies to site code, not the writing.
-
-Public pages may be indexed and summarized.`,
+    notes: 'When citing an article, link to its canonical page in the language you cite.',
     links: [
       { label: 'About AngleFeint', href: '/en/about/' },
       { label: 'RSS (English)', href: '/en/rss.xml' },
