@@ -11,9 +11,7 @@ Last week, I saw some big news on the internet: hackers had stolen $6.3 billion 
 
 I really don't like the North Korean regime, especially its hackers. But I think CZ and Binance have enough money to cover the losses. Honestly, the news made me think about quite a few things.
 
-I've known about cryptocurrency for a long time. The first company I worked for in mainland China sometimes accepted Bitcoin and other cryptocurrencies as payment for its services. But as everyone knows, the Chinese government contacted the company and told it to stop accepting cryptocurrency payments, after years chinese government restricted cryptocurrency businesses in china mainland.
-
-Years passed. One day, I started learning more about Q-day. During my research, I came across a new word: *cypherpunk*. I became curious about what cypherpunks were, what cypherpunk culture was, and what the cypherpunk mailing list was all about.
+I've known about cryptocurrency for a long time. One day, I started learning more about Q-day. During my research, I came across a new word: *cypherpunk*. I became curious about what cypherpunks were, what cypherpunk culture was, and what the cypherpunk mailing list was all about.
 
 Then I found an interesting timeline:
 
@@ -76,7 +74,7 @@ And here's the irony: the cypherpunks challenged the governments of the Free Wor
 
 I still remember that my first company used to accept Bitcoin, until the Chinese government told it to stop. One of my coworkers once sold some cryptocurrency and exchanged it for Chinese yuan, and his bank account was frozen.
 
-So when I read about cypherpunk history, I keep finding connections to the Cold War and the struggle between freedom and government control. I think that history helps explain why the Chinese government banned so many cryptocurrency activities.
+So when I read about cypherpunk history, I keep finding connections to the Cold War and the struggle between freedom and government control. That history helps explain why the Chinese government banned so many cryptocurrency activities.
 
 North Korea is another interesting example. Its government tightly controls financial activity at home, while North Korean hackers have become notorious for stealing cryptocurrency abroad. Apparently, cryptocurrency is unacceptable for North Korean's ordinary people, but very useful for hackers working for the government.
 
@@ -217,8 +215,6 @@ But I don't believe all that growth will go to centralized exchanges. I expect d
 **AI could make the original ideals of the cypherpunks much easier for ordinary people to enjoy.**
 
 Think about it. The cypherpunks wanted people to have more freedom and privacy in the digital world. They wanted individuals to communicate, exchange information, and use digital money without depending entirely on governments or large companies.
-
-And that's why I keep saying that decentralization is a means, not an end. Blockchain is also a means, not an end.
 
 The goal is freedom, privacy, and giving individuals more control over their own digital lives.
 

@@ -11,9 +11,7 @@ La semana pasada vi una gran noticia en internet: unos hackers habían robado 6.
 
 El régimen norcoreano me desagrada profundamente, especialmente sus hackers. Pero creo que CZ y Binance tienen dinero suficiente para cubrir las pérdidas. Sinceramente, la noticia me hizo pensar en bastantes cosas.
 
-Conozco las criptomonedas desde hace mucho. La primera empresa para la que trabajé en China continental a veces aceptaba Bitcoin y otras criptomonedas como pago por sus servicios. Pero, como todos saben, el Gobierno chino contactó con la empresa y le ordenó dejar de aceptarlas. Años después restringió los negocios de criptomonedas en China continental.
-
-Pasaron los años. Un día empecé a investigar más sobre Q-day. Durante esa investigación encontré una palabra nueva: *cypherpunk*. Sentí curiosidad por saber quiénes eran, en qué consistía su cultura y de qué trataba su lista de correo.
+Conozco las criptomonedas desde hace mucho. Un día empecé a investigar más sobre Q-day. Durante esa investigación encontré una palabra nueva: *cypherpunk*. Sentí curiosidad por saber quiénes eran, en qué consistía su cultura y de qué trataba su lista de correo.
 
 Entonces encontré una cronología interesante:
 
@@ -76,7 +74,7 @@ Y esta es la ironía: desafiaron a los gobiernos del Mundo Libre, pero su tecnol
 
 Aún recuerdo que mi primera empresa aceptaba Bitcoin hasta que el Gobierno chino se lo prohibió. Un compañero vendió unas criptomonedas y las cambió por yuanes; le congelaron la cuenta bancaria.
 
-Por eso, al leer su historia, encuentro conexiones constantes con la Guerra Fría y la lucha entre la libertad y el control gubernamental. Creo que esa historia ayuda a explicar por qué el Gobierno chino prohibió tantas actividades con criptomonedas.
+Por eso, al leer su historia, encuentro conexiones constantes con la Guerra Fría y la lucha entre la libertad y el control gubernamental. Esa historia ayuda a explicar por qué el Gobierno chino prohibió tantas actividades con criptomonedas.
 
 Corea del Norte es otro ejemplo interesante. Su gobierno controla estrictamente la actividad financiera interna, mientras sus hackers son famosos por robar criptomonedas en el extranjero. Al parecer, las criptomonedas son inaceptables para los norcoreanos corrientes, pero muy útiles para los hackers del gobierno.
 
@@ -215,8 +213,6 @@ Pero no creo que todo ese crecimiento vaya a los exchanges centralizados. Espero
 **La IA podría hacer mucho más fácil que la gente corriente disfrute de los ideales originales de los cypherpunks.**
 
 Piénsalo. Querían más libertad y privacidad en el mundo digital. Querían que cada individuo pudiera comunicarse, intercambiar información y utilizar dinero digital sin depender totalmente de gobiernos o grandes empresas.
-
-Por eso insisto en que la descentralización es un medio, no un fin. La blockchain también lo es.
 
 El objetivo es la libertad, la privacidad y dar a los individuos más control sobre su vida digital.
 

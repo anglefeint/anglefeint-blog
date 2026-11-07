@@ -11,9 +11,7 @@ Letzte Woche sah ich eine große Nachricht im Internet: Hacker hatten Binance Kr
 
 Ich mag das nordkoreanische Regime wirklich nicht, besonders seine Hacker. Aber ich denke, CZ und Binance haben genug Geld, um die Verluste auszugleichen. Ehrlich gesagt brachte mich die Nachricht über einiges zum Nachdenken.
 
-Kryptowährungen kenne ich schon lange. Die erste Firma, bei der ich in Festlandchina arbeitete, nahm manchmal Bitcoin und andere Kryptowährungen als Bezahlung für ihre Dienstleistungen an. Aber wie jeder weiß, meldete sich die chinesische Regierung und verlangte, diese Zahlungen einzustellen. Jahre später schränkte sie Kryptogeschäfte in Festlandchina ein.
-
-Jahre vergingen. Eines Tages beschäftigte ich mich näher mit Q-Day. Dabei begegnete mir ein neues Wort: *Cypherpunk*. Ich wurde neugierig: Wer waren sie, was war ihre Kultur, und worum ging es auf ihrer Mailingliste?
+Kryptowährungen kenne ich schon lange. Eines Tages beschäftigte ich mich näher mit Q-Day. Dabei begegnete mir ein neues Wort: *Cypherpunk*. Ich wurde neugierig: Wer waren sie, was war ihre Kultur, und worum ging es auf ihrer Mailingliste?
 
 Dann fand ich eine interessante Zeitleiste:
 
@@ -76,7 +74,7 @@ Darin liegt die Ironie: Die Cypherpunks forderten die Regierungen der freien Wel
 
 Ich erinnere mich noch, wie meine erste Firma Bitcoin annahm, bis die chinesische Regierung es untersagte. Ein Kollege verkaufte Kryptowährungen gegen Yuan, und sein Bankkonto wurde eingefroren.
 
-Wenn ich diese Geschichte lese, entdecke ich daher ständig Verbindungen zum Kalten Krieg und zum Kampf zwischen Freiheit und staatlicher Kontrolle. Sie hilft meiner Meinung nach zu erklären, warum China so viele Kryptoaktivitäten verbot.
+Wenn ich diese Geschichte lese, entdecke ich daher ständig Verbindungen zum Kalten Krieg und zum Kampf zwischen Freiheit und staatlicher Kontrolle. Diese Geschichte hilft zu erklären, warum China so viele Kryptoaktivitäten verbot.
 
 Nordkorea ist ein weiteres interessantes Beispiel. Seine Regierung kontrolliert Finanzaktivitäten im Inland streng, während seine Hacker für Kryptodiebstähle im Ausland berüchtigt sind. Offenbar sind Kryptowährungen für gewöhnliche Nordkoreaner inakzeptabel, für staatliche Hacker aber äußerst nützlich.
 
@@ -215,8 +213,6 @@ Aber nicht alles Wachstum wird meiner Meinung nach an zentralisierte Börsen geh
 **KI könnte es gewöhnlichen Menschen viel leichter machen, die ursprünglichen Ideale der Cypherpunks zu genießen.**
 
 Denkt darüber nach. Sie wollten mehr Freiheit und Privatsphäre in der digitalen Welt. Einzelne sollten kommunizieren, Informationen austauschen und digitales Geld nutzen können, ohne vollständig von Regierungen oder Großunternehmen abzuhängen.
-
-Deshalb sage ich immer wieder: Dezentralisierung ist ein Mittel, kein Selbstzweck. Dasselbe gilt für Blockchain.
 
 Das Ziel sind Freiheit, Privatsphäre und mehr individuelle Kontrolle über das eigene digitale Leben.
 
