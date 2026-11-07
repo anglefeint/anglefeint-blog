@@ -148,7 +148,7 @@ Anfang dieses Jahres las ich Äußerungen von CZ über KI und Kryptowährungen. 
 
 Ich verstehe das Argument, stimme aber nicht vollständig zu.
 
-Warum sollten Agenten künftig keine eigene Identität haben können? Warum nicht mit einer anerkannten Identität Eigentum besitzen oder Geld verwalten? Wir wissen nicht, wie zukünftige Gesetze und Finanzsysteme funktionieren werden.
+Warum sollten Agenten künftig keine eigene Identität haben können? Warum nicht mit einer anerkannten Identität Eigentum besitzen oder Geld verwalten? Wir wissen nicht, wie zukünftige Gesetze und Finanzsysteme funktionieren werden. KI-Agenten könnten künftig also durchaus KYC-Prüfungen bestehen, entgegen dem, was CZ nahegelegt hat.
 
 Hier ein weiterer interessanter Gedanke.
 

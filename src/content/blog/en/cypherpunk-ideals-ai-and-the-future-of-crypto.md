@@ -150,7 +150,7 @@ Earlier this year, I read some comments from CZ about AI and cryptocurrency. He 
 
 I understand that argument, but I don't completely agree.
 
-Why couldn't AI agents have their own identities in the future? Why couldn't they own property or manage money through some kind of recognized identity? We don't know how future laws and financial systems will work.
+Why couldn't AI agents have their own identities in the future? Why couldn't they own property or manage money through some kind of recognized identity? We don't know how future laws and financial systems will work. So AI agents may well be able to pass KYC in the future, contrary to what CZ suggested.
 
 Here's another interesting thought.
 

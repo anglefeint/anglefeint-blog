@@ -148,7 +148,7 @@ A principios de año leí comentarios de CZ sobre IA y criptomonedas. Decía que
 
 Entiendo el argumento, pero no coincido del todo.
 
-¿Por qué no podrían tener identidad propia en el futuro? ¿Por qué no podrían poseer bienes o gestionar dinero mediante alguna identidad reconocida? No sabemos cómo funcionarán las leyes y las finanzas futuras.
+¿Por qué no podrían tener identidad propia en el futuro? ¿Por qué no podrían poseer bienes o gestionar dinero mediante alguna identidad reconocida? No sabemos cómo funcionarán las leyes y las finanzas futuras. Así que es muy posible que los agentes de IA puedan superar el KYC en el futuro, en contra de lo que sugirió CZ.
 
 Hay otra idea interesante.
 
