@@ -23,6 +23,11 @@ npm ci
 npm run dev
 ```
 
+
+## Theme upgrades
+
+This blog uses the 0.27.1 integration starter. Run `npm run upgrade` for future compatible npm upgrades, then preview and deploy. See [the migration record](docs/theme-upgrades.md).
+
 ## License
 
 Source code is licensed under [MIT](LICENSE). Unless otherwise noted, AngleFeint's original articles are excluded from that license and have all rights reserved; see the [article copyright notice](src/content/blog/LICENSE). Third-party assets remain subject to their respective rights and licenses.

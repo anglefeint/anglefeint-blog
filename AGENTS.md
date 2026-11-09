@@ -17,9 +17,9 @@ This is a personal blog built from the Anglefeint starter. Help its owner config
 
 Read [README.md](README.md) or the owner's language version, then inspect `package.json` and the existing `src/site.config.ts`. Read only the tutorial needed for the task:
 
-- [Setup and deployment](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.20.0/src/content/blog/en/starter-guide-1-configure-your-site.md)
-- [Writing and content](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.20.0/src/content/blog/en/starter-guide-2-languages-and-routing.md)
-- [Optional features](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.20.0/src/content/blog/en/starter-guide-3-comments-about-and-theme-toggles.md)
+- [Setup and deployment](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.27.1/scripts/starter-templates/content/en/starter-guide-1-configure-your-site.md.template)
+- [Writing and content](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.27.1/scripts/starter-templates/content/en/starter-guide-2-languages-and-routing.md.template)
+- [Optional features](https://github.com/anglefeint/astro-theme-anglefeint/blob/v0.27.1/scripts/starter-templates/content/en/starter-guide-3-comments-about-and-theme-toggles.md.template)
 
 Starter tutorials are intentionally not published as articles on this blog. The links above reference the matching upstream release. Actual local configuration and code determine behavior; examples should be merged into the existing configuration.
 
@@ -58,7 +58,7 @@ Keep configuration imports/exports and merge into the existing `defineThemeConfi
 
 The official machine-readable integration generates `llms.txt`, localized indexes/full-text bundles and article Markdown companions during builds. Do not create `public/llms.txt`: it conflicts with generated output. The previous hand-written guidance is preserved in `docs/previous-llms.txt` for reference; it is not automatically included in generated exports. Preserve article copyright in `src/content/blog/LICENSE`. These exports describe published content, not agent instructions, and do not grant additional reuse rights.
 
-`src/config/*`, `src/i18n/*` and `src/types/theme-scripts.d.ts` are generated adapters. Prefer the public configuration; if intentional adapter customization is necessary, change the matching local `scripts/adapter-templates/*` source and regenerate. `sync-adapters` overwrites generated targets. Do not edit `node_modules`, `dist` or `.astro`; package changes belong in a deliberate upgrade or an upstream fix.
+The theme package owns standard routes, configuration defaults/types, i18n, effects and build integrations. Public configuration comes from `@anglefeint/astro-theme/config`. Standard Home, Blog, Tags, About, Decoder, RSS, robots and terminal routes are reserved; use other paths for custom pages. Do not recreate old local routes, generated adapters or adapter-sync scripts. Do not edit `node_modules`, `dist` or `.astro`.
 
 ## Content and languages
 
@@ -74,9 +74,9 @@ The official machine-readable integration generates `llms.txt`, localized indexe
 Use the package manager already chosen by the owner; README gives npm and pnpm commands. From the project root:
 
 - `npm run dev -- --background` for local editing. Search requires a built preview.
-- `npm run check:no-build` for quick adapter/scaffold/type checks.
+- `npm run check:no-build` for a quick Astro type check.
 - `npm run doctor` before delivery: it includes checks and a build. Then `npm run preview` and verify the changed pages. Do not repeat `check` and `build` after a successful `doctor` without a reason.
-- Use `npm run sync-adapters` only when intentional template changes or diagnostics call for it; review the overwritten targets first.
+- Use `npm run upgrade` for future schema-1 npm upgrades; it updates the package and runs doctor without publishing. Keep backups and review the resulting dependency changes.
 
 For a custom page, available themes are `base`, `ai`, `cyber`, `hacker`, `matrix`; creation does not add a navigation item or translate its body. Preserve the four page atmospheres, accessibility, reduced motion and mobile usability when changing visuals.
 

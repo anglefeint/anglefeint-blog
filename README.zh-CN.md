@@ -23,6 +23,11 @@ npm ci
 npm run dev
 ```
 
+
+## 主题升级
+
+本站已迁移到 0.27.1 integration starter。后续兼容版本可运行 `npm run upgrade`，检查预览后再部署。详见[迁移记录](docs/theme-upgrades.md)。
+
 ## 许可
 
 源代码采用 [MIT 许可](LICENSE)。除另有说明外，AngleFeint 的原创文章不包含在该许可中，并保留所有权利，详见[文章版权声明](src/content/blog/LICENSE)。第三方资源仍受各自的权利与许可约束。

@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Local upgrade backups and verification output
+.anglefeint/
+acceptance-results/
