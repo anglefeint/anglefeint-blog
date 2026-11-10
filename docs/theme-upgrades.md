@@ -17,6 +17,14 @@ Validation passed in both the isolated candidate and the final repository: docto
 
 Upgraded with `npm run upgrade -- --to 0.27.2`. This patch fixes completion of search-index writes during builds; no content or configuration migration was required. The updater backed up dependency files and completed doctor. SHA-256 checks confirmed all 121 protected content, asset, configuration and deployment/workflow files were byte-identical. The dependency audit and browser article-search check passed.
 
+## 0.27.2 to 0.28.0
+
+Upgraded with the official npm updater and enabled `theme.comments.shareAcrossLocales`. Shared mode uses `mapping: 'specific'`, empty configured `term`/`number`, and strict matching. Each article's locale-free slug supplies its term; the comment interface continues following the page language.
+
+Doctor, the dependency audit and browser Giscus loading passed. All 54 article pages were checked for six distinct per-article terms shared across nine locales, with correct interface languages. Articles, music and other public assets were byte-preserved; other personal configuration values were unchanged. GitHub contained only the welcome discussion when switching; no discussions or comments were moved, created or deleted during validation.
+
+To restore the former associations, set `shareAcrossLocales: false` and `mapping: 'pathname'`; keep `term` and `number` empty and `strict: '1'`. Existing discussions are retained on GitHub.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
