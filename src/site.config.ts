@@ -309,6 +309,10 @@ export const THEME_CONFIG = defineThemeConfig({
   },
   theme: {
     blogPageSize: 10,
+    fragments: {
+      enabled: true,
+      comments: { enabled: true },
+    },
     comments: {
       enabled: true,
       repo: 'anglefeint/anglefeint-blog',

@@ -33,6 +33,14 @@ The build produced 271 HTML pages, including all 54 article pages. SHA-256 check
 
 Production-preview browser checks covered Home, article search and result navigation, English/Chinese article switching, the Chinese article at a 390px viewport without horizontal overflow, About and Decoder Base64 decoding. The Chinese article retained its production canonical URL and locale-free shared Giscus term. This was a local upgrade and preview only; no commit, push or deployment was performed.
 
+## 0.30.0 to 0.31.0
+
+Upgraded with `npm run upgrade -- --to 0.31.0`; the official updater backed up dependency files and completed doctor. Enabled Fragments and its optional comments as requested, reusing the existing Giscus configuration. No fragment content or demo examples were added.
+
+The build produced 280 HTML pages, including nine empty Fragments feeds. The dependency audit reported zero vulnerabilities. SHA-256 checks confirmed all 125 protected source, asset, configuration and workflow files matched the pre-upgrade baseline, which already included the requested Fragments switches.
+
+An isolated invocation of the installed official `new-fragment` CLI without locale arguments generated all nine enabled languages with one shared ID and timestamp. Generated skeletons stayed under ignored acceptance output. Browser production-preview checks passed for Home, Chinese and English Fragments, the Frontier entry and language switching. Empty-collection warnings are expected until the first fragment is written; comment-dialog loading awaits a real fragment.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
