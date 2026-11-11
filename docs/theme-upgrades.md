@@ -53,6 +53,12 @@ Recreated the single nine-language Fragment with the official 0.33.0 `new-fragme
 
 The official upgrade and doctor passed, along with a zero-vulnerability dependency audit. All 123 protected source/public files outside Fragments remained byte-identical. Nine-language output checks verified short anchors, comment terms, page indexes and the new shared 1200×630 Anglefeint OG image; article-specific generated images retained precedence. Browser preview confirmed short-link anchor focus, successful copy feedback and actual paste results, English/Chinese Giscus loading with the new term, and a 390px comment dialog without horizontal overflow or console errors. The default OG artwork was visually inspected. No comments or reactions were submitted.
 
+## 0.33.0 to 0.33.1
+
+Upgraded with `npm run upgrade -- --to 0.33.1`, then recreated the existing nine-language Fragment using the installed official CLI at the owner's request. Its new ID is `Xkar9E4f`, and share links now use `/fragments/#Xkar9E4f` without the former `fragment-` prefix. All original text, translations, image references and the 2026-11-11 publication date were preserved. Previous links/comment associations are not migrated; no GitHub discussions were deleted.
+
+The upgrader's doctor and the final doctor after recreating content both passed. The dependency audit reported zero vulnerabilities, and all 123 protected files outside Fragments were unchanged. Nine-language output checks verified content preservation, exact short anchors/date links, shared comment terms, indexes and Anglefeint default OG metadata. Browser preview confirmed initial anchor focus, successful copying with an actual paste of the new `#ID` URL, and English/Chinese Giscus loading with `fragment/Xkar9E4f`. No comments or reactions were submitted.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
