@@ -47,6 +47,12 @@ Upgraded with `npm run upgrade -- --to 0.32.0`; the official updater backed up d
 
 Production-preview browser checks verified English and Chinese copy-button feedback and actual paste results, clickable dates and anchor focus, and both localized Giscus dialogs using the unchanged shared fragment term. The comment dialog also fit a 390px viewport without horizontal overflow and closed correctly; no browser console errors were observed. Nine-language fragment content, dates, image, comment terms, canonicals and language links passed output checks. Versioned ID/page indexes were generated; cross-page navigation was not exercised because this blog currently has only one fragment per language. No comments or reactions were submitted.
 
+## 0.32.0 to 0.33.0
+
+Recreated the single nine-language Fragment with the official 0.33.0 `new-fragment` command before running `npm run upgrade -- --to 0.33.0`. The strict eight-character ID is now `2n978aIP`; the former UUID is no longer supported. Original text, translations, image and publication date (2026-11-11) were preserved exactly; only the ID and filenames changed. Old share links no longer locate the entry and comments now use `fragment/2n978aIP`; no GitHub discussions were deleted or migrated.
+
+The official upgrade and doctor passed, along with a zero-vulnerability dependency audit. All 123 protected source/public files outside Fragments remained byte-identical. Nine-language output checks verified short anchors, comment terms, page indexes and the new shared 1200×630 Anglefeint OG image; article-specific generated images retained precedence. Browser preview confirmed short-link anchor focus, successful copy feedback and actual paste results, English/Chinese Giscus loading with the new term, and a 390px comment dialog without horizontal overflow or console errors. The default OG artwork was visually inspected. No comments or reactions were submitted.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
