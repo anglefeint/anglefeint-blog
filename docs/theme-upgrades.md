@@ -41,6 +41,12 @@ The build produced 280 HTML pages, including nine empty Fragments feeds. The dep
 
 An isolated invocation of the installed official `new-fragment` CLI without locale arguments generated all nine enabled languages with one shared ID and timestamp. Generated skeletons stayed under ignored acceptance output. Browser production-preview checks passed for Home, Chinese and English Fragments, the Frontier entry and language switching. Empty-collection warnings are expected until the first fragment is written; comment-dialog loading awaits a real fragment.
 
+## 0.31.0 to 0.32.0
+
+Upgraded with `npm run upgrade -- --to 0.32.0`; the official updater backed up dependency files and completed doctor. The dependency audit reported zero vulnerabilities. All 132 source and public asset files were SHA-256 identical to the pre-upgrade baseline, including the nine published Fragments and original image.
+
+Production-preview browser checks verified English and Chinese copy-button feedback and actual paste results, clickable dates and anchor focus, and both localized Giscus dialogs using the unchanged shared fragment term. The comment dialog also fit a 390px viewport without horizontal overflow and closed correctly; no browser console errors were observed. Nine-language fragment content, dates, image, comment terms, canonicals and language links passed output checks. Versioned ID/page indexes were generated; cross-page navigation was not exercised because this blog currently has only one fragment per language. No comments or reactions were submitted.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
