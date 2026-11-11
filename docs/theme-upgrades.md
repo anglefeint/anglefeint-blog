@@ -25,6 +25,14 @@ Doctor, the dependency audit and browser Giscus loading passed. All 54 article p
 
 To restore the former associations, set `shareAcrossLocales: false` and `mapping: 'pathname'`; keep `term` and `number` empty and `strict: '1'`. Existing discussions are retained on GitHub.
 
+## 0.28.0 to 0.30.0
+
+Upgraded with `npm run upgrade -- --to 0.30.0`. The official schema-1 updater backed up dependency files and completed doctor successfully. No configuration or content migration was required; Fragments remains disabled by default, and no demo content was imported.
+
+The build produced 271 HTML pages, including all 54 article pages. SHA-256 checks confirmed that all 125 protected source, public asset, configuration, deployment and writing-workflow files were unchanged. The lockfile changed only the theme package from 0.28.0 to 0.30.0; the dependency audit reported zero vulnerabilities.
+
+Production-preview browser checks covered Home, article search and result navigation, English/Chinese article switching, the Chinese article at a 390px viewport without horizontal overflow, About and Decoder Base64 decoding. The Chinese article retained its production canonical URL and locale-free shared Giscus term. This was a local upgrade and preview only; no commit, push or deployment was performed.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
