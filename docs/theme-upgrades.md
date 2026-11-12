@@ -59,6 +59,18 @@ Upgraded with `npm run upgrade -- --to 0.33.1`, then recreated the existing nine
 
 The upgrader's doctor and the final doctor after recreating content both passed. The dependency audit reported zero vulnerabilities, and all 123 protected files outside Fragments were unchanged. Nine-language output checks verified content preservation, exact short anchors/date links, shared comment terms, indexes and Anglefeint default OG metadata. Browser preview confirmed initial anchor focus, successful copying with an actual paste of the new `#ID` URL, and English/Chinese Giscus loading with `fragment/Xkar9E4f`. No comments or reactions were submitted.
 
+## 0.33.1 to 0.33.2
+
+Upgraded with `npm run upgrade -- --to 0.33.2`; the official updater backed up dependency files and completed doctor. This patch adds the shared back-to-top control to Fragments. The dependency audit reported zero vulnerabilities, and SHA-256 checks confirmed all 132 source/public files were unchanged, including the Fragment's ID, text, image placement and publication date.
+
+Production-preview browser checks passed for English and Chinese Fragments: scrolling revealed the localized control, clicking returned to the page top and hid the control again; the final scroll position was zero and no console errors were observed. Nine-language output checks retained content, `#Xkar9E4f` links, comment terms, indexes and Anglefeint OG metadata. No content was reposted.
+
+## 0.33.2 to 0.35.0
+
+Upgraded with `npm run upgrade -- --to 0.35.0` after the official compatibility preflight. The updater backed up dependency files and completed doctor successfully. The dependency audit reported zero vulnerabilities. All 132 source/public files remained SHA-256 identical; articles, translations, configuration, media and the existing Fragment were preserved.
+
+Production-preview browser checks verified the English and Chinese homepage Fragments avatar entrance, panel opening/closing and navigation to the original `#Xkar9E4f`. The Chinese panel fit a 390px viewport below the navigation without horizontal overflow. Fragment copying showed successful feedback, and English/Chinese Giscus dialogs loaded with the unchanged `fragment/Xkar9E4f` identity; no comments or reactions were submitted. Article preview confirmed visible text with no opacity entrance/breathing animation and the removed reading-time/latency/confidence displays. Nine-language build-output checks verified homepage links, Fragment anchors/comment terms/default OG and the new About/Fragments Markdown companions. Preview was local only; no commit or push was performed.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
