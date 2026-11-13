@@ -77,6 +77,12 @@ Upgraded with `npm run upgrade -- --to 0.36.0`. The official updater backed up d
 
 Nine-language output checks verified responsive Fragment images, dimensions/loading priority, both existing IDs and comment identities, article covers, conditional math CSS and all referenced build assets. Production-preview browser checks covered the English Fragment image, Chinese Blog/archive and article covers, homepage Fragment previews, immediate About reading, Oracle loading/close and the lazy Decryptor's successful Base64 example. At 390px, the Chinese Fragment used the 400px image variant without horizontal overflow. No browser console errors were observed during the final preview check. Deployment and live-site verification are left to the owner.
 
+## 0.36.0 to 0.36.1
+
+Upgraded with `npm run upgrade -- --to 0.36.1`; the official updater backed up dependency files and completed doctor. The dependency audit reported zero vulnerabilities. All 232 pre-existing source/public files remained SHA-256 identical, including content, configuration and generated cover assets. `prepare-covers --check` reused all 90 existing variants without regenerating files.
+
+Nine-language build-output checks passed for both Fragments, stable IDs/comment terms, homepage previews, Markdown exports, OG metadata and responsive image assets. Production-preview browser checks covered the English article/author, switching to its Chinese translation, the three localized related-post links, homepage Fragments previews and navigation to the existing short anchor. At 390px, the Chinese Fragment selected the 400px WebP variant without horizontal overflow; the final browser error-log check was empty. Failure/retry paths and live system reduced-motion changes were not simulated. Deployment and live-site verification remain owner-owned.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
