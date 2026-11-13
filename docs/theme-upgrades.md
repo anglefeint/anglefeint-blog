@@ -71,6 +71,12 @@ Upgraded with `npm run upgrade -- --to 0.35.0` after the official compatibility 
 
 Production-preview browser checks verified the English and Chinese homepage Fragments avatar entrance, panel opening/closing and navigation to the original `#Xkar9E4f`. The Chinese panel fit a 390px viewport below the navigation without horizontal overflow. Fragment copying showed successful feedback, and English/Chinese Giscus dialogs loaded with the unchanged `fragment/Xkar9E4f` identity; no comments or reactions were submitted. Article preview confirmed visible text with no opacity entrance/breathing animation and the removed reading-time/latency/confidence displays. Nine-language build-output checks verified homepage links, Fragment anchors/comment terms/default OG and the new About/Fragments Markdown companions. Preview was local only; no commit or push was performed.
 
+## 0.35.0 to 0.36.0
+
+Upgraded with `npm run upgrade -- --to 0.36.0`. The official updater backed up dependency files and completed doctor. `prepare-covers --check` passed, and the dependency audit reported zero vulnerabilities. All 141 pre-existing source/public files remained SHA-256 identical. The local doctor prepared 90 persistent WebP variants plus their manifest under `src/assets/blog/covers/`; these files must be committed with the original images. The build copied the 30 variants referenced by this site's current content; unused prepared defaults remain available in the manifest.
+
+Nine-language output checks verified responsive Fragment images, dimensions/loading priority, both existing IDs and comment identities, article covers, conditional math CSS and all referenced build assets. Production-preview browser checks covered the English Fragment image, Chinese Blog/archive and article covers, homepage Fragment previews, immediate About reading, Oracle loading/close and the lazy Decryptor's successful Base64 example. At 390px, the Chinese Fragment used the 400px image variant without horizontal overflow. No browser console errors were observed during the final preview check. Deployment and live-site verification are left to the owner.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
@@ -79,7 +85,7 @@ Start with a clean or deliberately reviewed working tree and keep a backup of pe
 npm run upgrade
 ```
 
-The schema-1 npm updater backs up dependency files, installs the target and runs doctor. It does not publish the blog or rewrite personal content/configuration/media. Review its result and inspect `npm run preview` before committing and pushing. Do not deploy failed or incomplete build output.
+The schema-1 npm updater backs up dependency files, installs the target and runs doctor. It does not publish the blog or rewrite personal content/configuration/media. From 0.36.0, local doctor also prepares persistent responsive images: commit all of `src/assets/blog/covers/` (manifest and generated files) with the originals, because deployment builds validate rather than regenerate them. Review its result and inspect `npm run preview` before committing and pushing. After a successful push, notify the owner; deployment and live-site verification are owner-owned unless explicitly requested. Do not deploy failed or incomplete build output.
 
 For a read-only compatibility preflight:
 
