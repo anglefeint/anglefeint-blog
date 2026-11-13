@@ -72,10 +72,9 @@ npm run preview
 
 - Inspect `git status`, review the diff, and run `git diff --check`. Keep unrelated work out of the commit.
 - Push only when the author authorizes publication. A request to review a manuscript or explain the workflow is not permission to publish. Honor a later instruction to pause or withhold a push.
-- After pushing, verify the remote branch contains the expected commit and check its Cloudflare Workers Builds status. A successful Git push does not prove deployment succeeded.
-- After deployment succeeds, check the live article and relevant metadata. Report pending or failed deployment honestly.
-- If no build is triggered, inspect the commit's checks and Cloudflare build history first. Do not automatically alter build settings, reconnect integrations, or create empty commits. Obtain approval before an empty-commit retry.
-- Give a concise completion report: published locales, publication date, commit, checks performed, deployment status, and article URLs when appropriate.
+- After a successful push, promptly notify the author and let them verify deployment and the live site themselves. Do not wait for or check Cloudflare Workers Builds, deployment status, live content or metadata unless the author explicitly requests it.
+- Give a concise completion report: included locales, publication date, commit, local checks performed, and article URLs when appropriate. State that the changes were pushed and deployment/live-site verification is left to the author; do not claim deployment succeeded based only on a successful push.
+- Do not alter build settings, reconnect integrations or create empty commits to trigger deployment without the author's explicit authorization.
 
 ## Scope and Ownership
 
