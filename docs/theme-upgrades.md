@@ -95,6 +95,12 @@ Upgraded with `npm run upgrade -- --to 0.37.0`, preserving the pending 0.36.2 up
 
 Nine-language output checks retained both Fragment IDs, dates, content, comment identities, homepage previews, Markdown exports, OG metadata and responsive image assets. Local browser preview verified the new StarCraft-inspired English/Chinese Fragments design, copy-link feedback, original short anchors, player expansion and its 14-track queue. English and Chinese Giscus dialogs loaded with the route-local `noborder_gray` theme and unchanged per-Fragment terms. At 390px, the English page and loaded comment dialog fit without horizontal overflow; closing the dialog worked. The Blog list still rendered normally and the final browser error-log check was empty. No comments/reactions were submitted, and audio playback and long pagination were not exercised. No commit, push, deployment or live-site verification was performed.
 
+## 0.37.0 to 0.37.1
+
+Upgraded with `npm run upgrade -- --to 0.37.1`; the official updater backed up dependency files and completed doctor. The dependency audit reported zero vulnerabilities. All 232 source/public files remained SHA-256 identical. Nine-language output checks retained both Fragments, links/comment identities, previews, exports, OG metadata and responsive image assets.
+
+Local production-preview browser checks covered direct `#Xkar9E4f` arrival on desktop and a reload at 390px: the target card stayed below the fixed navigation/title, with no horizontal overflow and focus on the target. Standalone Decoder's Base64 example completed as `Follow the white rabbit.`; its plain `pre` has no `aria-label` and retains `tabindex="0"`. The browser error-log check was empty. About's Decoder dialog and persisted-history restoration were not separately exercised. No commit, push, deployment or live-site verification was performed.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
