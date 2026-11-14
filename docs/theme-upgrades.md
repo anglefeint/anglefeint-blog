@@ -83,6 +83,18 @@ Upgraded with `npm run upgrade -- --to 0.36.1`; the official updater backed up d
 
 Nine-language build-output checks passed for both Fragments, stable IDs/comment terms, homepage previews, Markdown exports, OG metadata and responsive image assets. Production-preview browser checks covered the English article/author, switching to its Chinese translation, the three localized related-post links, homepage Fragments previews and navigation to the existing short anchor. At 390px, the Chinese Fragment selected the 400px WebP variant without horizontal overflow; the final browser error-log check was empty. Failure/retry paths and live system reduced-motion changes were not simulated. Deployment and live-site verification remain owner-owned.
 
+## 0.36.1 to 0.36.2
+
+Upgraded with `npm run upgrade -- --to 0.36.2`; the official updater backed up dependency files and completed doctor. Normal builds and local/CI doctor now prepare responsive derivatives, reusing valid files and repairing missing/stale/corrupt outputs; explicit `prepare-covers --check` remains read-only. The dependency audit reported zero vulnerabilities. All 232 existing source/public files were SHA-256 unchanged, and the cover check reused all 90 existing variants.
+
+Nine-language build-output checks passed for both Fragments, IDs/comment identities, previews, Markdown exports, OG metadata, article covers and responsive assets. Local production-preview browser checks verified the Chinese Fragment image on desktop and at 390px (400px WebP selected, no horizontal overflow), plus the English article cover. The final browser error-log check was empty. No missing/corrupt-image repair scenario or deployment was exercised. Deployment and live-site verification remain owner-owned.
+
+## 0.36.2 to 0.37.0
+
+Upgraded with `npm run upgrade -- --to 0.37.0`, preserving the pending 0.36.2 upgrade record. The installed Astro 7.4.8 already satisfies the new `^7.4.7` peer requirement; no Astro migration was needed. The official updater backed up dependencies and completed doctor. The dependency audit reported zero vulnerabilities. All 232 pre-existing source/public files remained SHA-256 identical, and all 90 responsive variants were reused.
+
+Nine-language output checks retained both Fragment IDs, dates, content, comment identities, homepage previews, Markdown exports, OG metadata and responsive image assets. Local browser preview verified the new StarCraft-inspired English/Chinese Fragments design, copy-link feedback, original short anchors, player expansion and its 14-track queue. English and Chinese Giscus dialogs loaded with the route-local `noborder_gray` theme and unchanged per-Fragment terms. At 390px, the English page and loaded comment dialog fit without horizontal overflow; closing the dialog worked. The Blog list still rendered normally and the final browser error-log check was empty. No comments/reactions were submitted, and audio playback and long pagination were not exercised. No commit, push, deployment or live-site verification was performed.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
@@ -91,7 +103,7 @@ Start with a clean or deliberately reviewed working tree and keep a backup of pe
 npm run upgrade
 ```
 
-The schema-1 npm updater backs up dependency files, installs the target and runs doctor. It does not publish the blog or rewrite personal content/configuration/media. From 0.36.0, local doctor also prepares persistent responsive images: commit all of `src/assets/blog/covers/` (manifest and generated files) with the originals, because deployment builds validate rather than regenerate them. Review its result and inspect `npm run preview` before committing and pushing. After a successful push, notify the owner; deployment and live-site verification are owner-owned unless explicitly requested. Do not deploy failed or incomplete build output.
+The schema-1 npm updater backs up dependency files, installs the target and runs doctor. It does not publish the blog or rewrite personal content/configuration/media. From 0.36.2, normal builds and doctor prepare responsive images in local and CI environments, reusing valid assets and repairing missing/stale/corrupt derivatives. Keep originals; commit `src/assets/blog/covers/` (manifest and generated files) to reuse prepared bytes across builds. Use `npx astro-theme prepare-covers --check` for explicit read-only validation. Review the result and inspect `npm run preview` before committing and pushing. After a successful push, notify the owner; deployment and live-site verification are owner-owned unless explicitly requested. Do not deploy failed or incomplete build output.
 
 For a read-only compatibility preflight:
 
