@@ -101,6 +101,12 @@ Upgraded with `npm run upgrade -- --to 0.37.1`; the official updater backed up d
 
 Local production-preview browser checks covered direct `#Xkar9E4f` arrival on desktop and a reload at 390px: the target card stayed below the fixed navigation/title, with no horizontal overflow and focus on the target. Standalone Decoder's Base64 example completed as `Follow the white rabbit.`; its plain `pre` has no `aria-label` and retains `tabindex="0"`. The browser error-log check was empty. About's Decoder dialog and persisted-history restoration were not separately exercised. No commit, push, deployment or live-site verification was performed.
 
+## 0.37.1 to 0.37.2
+
+Upgraded with `npm run upgrade -- --to 0.37.2`; the official updater backed up dependency files and completed doctor. The dependency audit reported zero vulnerabilities. All 232 pre-existing source/public files remained SHA-256 identical. Nine-language output checks retained both Fragments, stable IDs/comments, previews, Markdown exports, OG metadata and responsive images.
+
+The existing `defaultLocalePrefix: 'never'` configuration was preserved. Built root, English-alias and Chinese home pages all contain Anglefeint OG artwork and `summary_large_image` metadata. Browser production preview verified the root Home, production-domain canonical/OG URLs, the Fragments entrance and successful navigation/focus to `#pKJD4BdA`; the browser error-log check was empty. Other routing modes and external sharing-platform caches were not tested. No commit, push, deployment or live-site verification was performed.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
