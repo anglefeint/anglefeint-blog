@@ -107,6 +107,12 @@ Upgraded with `npm run upgrade -- --to 0.37.2`; the official updater backed up d
 
 The existing `defaultLocalePrefix: 'never'` configuration was preserved. Built root, English-alias and Chinese home pages all contain Anglefeint OG artwork and `summary_large_image` metadata. Browser production preview verified the root Home, production-domain canonical/OG URLs, the Fragments entrance and successful navigation/focus to `#pKJD4BdA`; the browser error-log check was empty. Other routing modes and external sharing-platform caches were not tested. No commit, push, deployment or live-site verification was performed.
 
+## 0.37.2 to 0.37.3
+
+Upgraded with `npm run upgrade`; the official updater backed up dependency files and completed doctor. Only the theme dependency and its lock entry changed; all existing content, site configuration and media were preserved. Nine-language output checks retained all three Fragments, shared IDs/dates, comment identities, homepage previews, Markdown exports and OG metadata.
+
+Local production-preview browser checks verified the Fragments crystal-blue Frontier arrow, bottom marker and active menu item, then navigation to Decoder Lab and its corresponding mint highlights. Both pages rendered normally and the browser error-log check was empty. Additional palettes remain available through theme defaults; personal configuration was not changed. No commit, push, deployment or live-site verification was performed.
+
 ## Future upgrades
 
 Start with a clean or deliberately reviewed working tree and keep a backup of personal content. Read the target release and upgrade notes, then run:
