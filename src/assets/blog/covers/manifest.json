@@ -17,6 +17,44 @@
   },
   "recipeHash": "589dfafdbbfc7a9161ce117d8c4e4e17e97509e232c7a0edd3db358e1b40cf8b",
   "sources": {
+    "public/images/fragments/apple-removes-sim-inspection-lens.png": {
+      "sourceHash": "a2c4edfbf5f96d5b409142bcb5e086fae25c96691817d5a481cfcd25221affae",
+      "width": 1536,
+      "height": 1024,
+      "passthrough": false,
+      "variants": [
+        {
+          "file": "apple-removes-sim-inspection-lens-24ee8e10-a2c4edfbf5f9-589dfafd-400w.webp",
+          "width": 400,
+          "height": 267,
+          "sha256": "ad83318682e2df80ebb17f50bf672967a1ac0ca88157546bb8bdfd02e40960d9"
+        },
+        {
+          "file": "apple-removes-sim-inspection-lens-24ee8e10-a2c4edfbf5f9-589dfafd-640w.webp",
+          "width": 640,
+          "height": 427,
+          "sha256": "d96dd72c07cf0c250ef83469cf5c07eee61a219b70ecc427bf9d239118a26f05"
+        },
+        {
+          "file": "apple-removes-sim-inspection-lens-24ee8e10-a2c4edfbf5f9-589dfafd-800w.webp",
+          "width": 800,
+          "height": 533,
+          "sha256": "f4ed6cf7aa5cfab506351829f33379321a2e12d13303de5549f5594e0b15f19d"
+        },
+        {
+          "file": "apple-removes-sim-inspection-lens-24ee8e10-a2c4edfbf5f9-589dfafd-960w.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "3535838b6c10d52419d4c60f17dbd38e2e5ccbbfda91d4ac7cc82207fd47d9d2"
+        },
+        {
+          "file": "apple-removes-sim-inspection-lens-24ee8e10-a2c4edfbf5f9-589dfafd-1200w.webp",
+          "width": 1200,
+          "height": 800,
+          "sha256": "c187257ec7be12d2b58e76c63a5777e1d2e7f04265b71af743c6df89205df8bf"
+        }
+      ]
+    },
     "public/images/fragments/starcraft-protoss-carrier.png": {
       "sourceHash": "99931ae1df43f4f2a2b19d9d61a305d0460522c21be7406e66bd22679c485bd5",
       "width": 3412,
